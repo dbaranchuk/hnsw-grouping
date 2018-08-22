@@ -253,7 +253,7 @@ void HierarchicalNSW::mutuallyConnectNewElement(const float *point, idx_t cur_c,
         }
 
         //Releasing lock for the maximum level
-        if (curlevel > enterpoint_node) {
+        if (curlevel > maxlevelcopy) {
             enterpoint_node = cur_c;
             maxLevel = curlevel;
         }
