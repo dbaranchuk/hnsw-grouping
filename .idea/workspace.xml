@@ -12,9 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea23355-286c-4603-b8c0-8146464b8097" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hnswalg.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/hnswalg.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="eea23355-286c-4603-b8c0-8146464b8097" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +46,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="359" />
+          <entry key="cpp" value="384" />
           <entry key="h" value="2" />
           <entry key="sh" value="5" />
         </counts>
@@ -56,7 +54,7 @@
       <usages-collector id="statistics.cidr.testingFrameworks.usages" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="361" />
+          <entry key="ObjectiveC" value="386" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
@@ -64,11 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hnswalg.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="253" column="8" lean-forward="true" selection-start-line="253" selection-start-column="8" selection-end-line="253" selection-end-column="8" />
+            <state relative-caret-position="323">
+              <caret line="247" column="32" selection-start-line="247" selection-start-column="32" selection-end-line="247" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -81,13 +79,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hnswalg.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="714">
+              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/run_sift.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
@@ -100,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/tests/test_sift.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="358">
-              <caret line="100" column="37" lean-forward="true" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
+              <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -124,9 +122,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/examples/run_sift.sh" />
-        <option value="$PROJECT_DIR$/hnswalg.h" />
         <option value="$PROJECT_DIR$/tests/test_sift.cpp" />
         <option value="$PROJECT_DIR$/hnswalg.cpp" />
+        <option value="$PROJECT_DIR$/hnswalg.h" />
       </list>
     </option>
   </component>
@@ -220,12 +218,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1534835984558</updated>
-      <workItem from="1534835988843" duration="7322000" />
+      <workItem from="1534835988843" duration="7871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7322000" />
+    <option name="totallyTimeSpent" value="7871000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-30" width="1920" height="1110" extended-state="6" />
@@ -259,23 +257,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/examples/run_sift.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1291" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnswalg.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
@@ -284,17 +268,31 @@
     <entry file="file://$PROJECT_DIR$/tests/test_sift.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
-          <caret line="100" column="37" lean-forward="true" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
+          <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hnswalg.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hnswalg.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="253" column="8" lean-forward="true" selection-start-line="253" selection-start-column="8" selection-end-line="253" selection-end-column="8" />
+        <state relative-caret-position="323">
+          <caret line="247" column="32" selection-start-line="247" selection-start-column="32" selection-end-line="247" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/run_sift.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
         </state>
       </provider>
     </entry>
