@@ -44,6 +44,8 @@ static void test_vs_recall(float *massQ, size_t nq,  HierarchicalNSW *quantizer,
                            size_t d, std::vector<std::priority_queue< std::pair<float,  idx_t>>> &answers, size_t k)
 {
     std::vector<size_t> efs;// = {k}; //= {30, 100, 460};
+    for (int i = 1; i < 10; i++) efs.push_back(i);
+    for (int i = 10; i < 100; i += 10) efs.push_back(i);
     for (int i = 100; i <= 500; i += 40) efs.push_back(i);
 
     for (size_t ef : efs) {
@@ -72,7 +74,7 @@ int main(int argc, char **argv)
     std::vector<idx_t> massQA(opt.nq * opt.ngt);
     {
         std::ifstream gt_input(opt.path_gt, std::ios::binary);
-        readXvec< idx_t>(gt_input, massQA.data(), opt.ngt, opt.nq);
+        readXvec<idx_t>(gt_input, massQA.data(), opt.ngt, opt.nq);
     }
 
     //==============
