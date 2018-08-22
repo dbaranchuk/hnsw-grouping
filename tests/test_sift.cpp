@@ -110,23 +110,14 @@ int main(int argc, char **argv)
         quantizer->SaveEdges(opt.path_edges);
     }
 
-//    if (exists(opt.path_reordered_edges))
-//        quantizer->LoadReorderTable(opt.path_reordered_edges);
-//    else {
-//        quantizer->reorder();
-//        quantizer->compute_collisions();
-//        quantizer->SaveReorderTable(opt.path_reordered_edges);
-//    }
-//    quantizer->reorder_data();
-
     //===================
     // Parse groundtruth
     //===================
-//    std::cout << "Parsing groundtruth" << std::endl;
+    std::cout << "Parsing groundtruth" << std::endl;
     std::vector<std::priority_queue< std::pair<float,  idx_t >>> answers;
-//    (std::vector<std::priority_queue< std::pair<float, idx_t >>>(opt.nq)).swap(answers);
-//    for (size_t i = 0; i < opt.nq; i++)
-//        answers[i].emplace(0.0f, massQA[opt.ngt*i]);
+    (std::vector<std::priority_queue< std::pair<float, idx_t >>>(opt.nq)).swap(answers);
+    for (size_t i = 0; i < opt.nq; i++)
+        answers[i].emplace(0.0f, massQA[opt.ngt*i]);
 
     test_vs_recall(massQ.data(), opt.nq, quantizer, opt.d, answers, opt.k);
 
