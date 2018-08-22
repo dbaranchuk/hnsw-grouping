@@ -239,7 +239,7 @@ void HierarchicalNSW::mutuallyConnectNewElement(const float *point, idx_t cur_c,
         int curlevel = 0;
 
         std::unique_lock <std::mutex> templock(global);
-        int maxlevelcopy = maxlevel;
+        int maxlevelcopy = maxLevel;
         if (curlevel <= maxlevelcopy)
             templock.unlock();
 
