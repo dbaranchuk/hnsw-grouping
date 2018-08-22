@@ -111,7 +111,6 @@ int main(int argc, char **argv)
         float mass[opt.d];
         readXvec<float>(input, mass, opt.d);
         quantizer->addPoint(mass);
-        std::cout << "HER\n";
 //#pragma omp parallel for
         for (int i = 1; i < opt.nb; i++) {
             float mass[opt.d];
