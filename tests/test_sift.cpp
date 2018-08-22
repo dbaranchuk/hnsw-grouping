@@ -99,13 +99,30 @@ int main(int argc, char **argv)
         std::ifstream input(opt.path_base, std::ios::binary);
 
         size_t report_every = 100000;
-        for (size_t i = 0; i < opt.nb; i++) {
+        //for (size_t i = 0; i < opt.nb; i++) {
+        //    float mass[opt.d];
+        //    readXvec<float>(input, mass, opt.d);
+        //    if (i % report_every == 0)
+        //        std::cout << i / (0.01 * opt.nb) << " %\n";
+        //    quantizer->addPoint(mass);
+        //}
+
+        int j1 = 0;
+        float mass[opt.d];
+        readXvec<float>(input, mass, opt.d);
+        quantizer->addPoint(mass);
+#pragma omp parallel for
+        for (int i = 1; i < opt.nb; i++) {
             float mass[opt.d];
-            readXvec<float>(input, mass, opt.d);
-            if (i % report_every == 0)
-                std::cout << i / (0.01 * opt.nb) << " %\n";
+#pragma omp critical
+            {
+                readXvec<float>(input, mass, opt.d);
+                if (++j1 % report_every == 0)
+                    std::cout << j1 / (0.01 * opt.nb) << " %\n";
+            }
             quantizer->addPoint(mass);
         }
+
         quantizer->SaveInfo(opt.path_info);
         quantizer->SaveEdges(opt.path_edges);
     }
