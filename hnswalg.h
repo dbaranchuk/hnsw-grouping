@@ -51,6 +51,10 @@ namespace hnswlib {
         size_t size_links_level0;
         size_t efSearch;
 
+        std::mutex cur_element_count_guard;
+        std::mutex global;
+        int maxLevel = -1;
+
     public:
         HierarchicalNSW(const std::string &infoLocation, const std::string &dataLocation, const std::string &edgeLocation);
         HierarchicalNSW(size_t d, size_t maxelements, size_t M, size_t maxM, size_t efConstruction = 500);

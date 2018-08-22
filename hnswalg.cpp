@@ -220,10 +220,6 @@ void HierarchicalNSW::mutuallyConnectNewElement(const float *point, idx_t cur_c,
 //    }
 //};
 
-    std::mutex cur_element_count_guard;
-    std::mutex global;
-    int maxLevel = -1;
-
     void HierarchicalNSW::addPoint(const float *point)
     {
         idx_t cur_c = 0;
