@@ -53,7 +53,6 @@ namespace hnswlib {
 
         std::mutex cur_element_count_guard;
         std::mutex global;
-        int maxLevel = -1;
 
     public:
         HierarchicalNSW(const std::string &infoLocation, const std::string &dataLocation, const std::string &edgeLocation);
