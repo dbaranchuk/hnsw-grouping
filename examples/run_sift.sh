@@ -11,10 +11,10 @@ efConstruction="300"  # Max number of candidate vertices in priority queue to ob
 # Data parameters #
 ###################
 
-nb="10000000"          # Number of base vectors
+nb="1000000"          # Number of base vectors
 nt="100000"           # Number of learn vectors
 
-nq="100000"            # Number of queries
+nq="10000"            # Number of queries
 ngt="100"             # Number of groundtruth neighbours per query
 
 d="128"               # Vector dimension
@@ -39,7 +39,6 @@ path_gt="${path_data}/sift_groundtruth.ivecs"
 path_q="${path_data}/sift_learn.fvecs" #query
 
 path_edges="${path_model}/hnsw_M${M}_ef${efConstruction}.ivecs"
-path_reordered_edges="${path_model}/hnsw_M${M}_ef${efConstruction}_reordered.ivecs"
 path_info="${path_model}/hnsw_M${M}_ef${efConstruction}.bin"
 
 #######
@@ -59,5 +58,4 @@ ${PWD}/bin/test_sift -M ${M} \
                      -path_gt ${path_gt} \
                      -path_q ${path_q} \
                      -path_edges ${path_edges} \
-                     -path_reordered_edges ${path_reordered_edges} \
                      -path_info ${path_info}

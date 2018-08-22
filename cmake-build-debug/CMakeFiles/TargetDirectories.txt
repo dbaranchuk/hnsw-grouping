@@ -1,0 +1,14 @@
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/CMakeFiles/install/strip.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/CMakeFiles/install/local.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/CMakeFiles/hnsw.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/CMakeFiles/install.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/CMakeFiles/list_install_components.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/tests/CMakeFiles/install/strip.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/tests/CMakeFiles/install/local.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/tests/CMakeFiles/edit_cache.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/tests/CMakeFiles/rebuild_cache.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/tests/CMakeFiles/install.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/tests/CMakeFiles/test_sift.dir
+/home/dbaranchuk/hnsw-grouping/cmake-build-debug/tests/CMakeFiles/list_install_components.dir

@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/libhnsw.a  CMakeFiles/hnsw.dir/hnswalg.cpp.o CMakeFiles/hnsw.dir/utils.cpp.o
+/usr/bin/ranlib lib/libhnsw.a
