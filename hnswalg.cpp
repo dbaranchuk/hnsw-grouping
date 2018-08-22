@@ -31,7 +31,7 @@ namespace hnswlib {
 
     visitedlistpool = new VisitedListPool(1, maxelements_);
 
-    enterpoint_node = 0;
+    enterpoint_node = -1; //0;
     cur_element_count = 0;
 }
 
@@ -231,7 +231,6 @@ void HierarchicalNSW::mutuallyConnectNewElement(const float *point, idx_t cur_c,
             };
             cur_c = cur_element_count;
             cur_element_count++;
-            std::cout << enterpoint_node << std::endl;
         }
         int curlevel = 0;
 
