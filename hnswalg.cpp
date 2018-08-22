@@ -1,7 +1,5 @@
 #include "hnswalg.h"
 
-#define MAX_BITS 20
-
 namespace hnswlib {
 
     HierarchicalNSW::HierarchicalNSW(const std::string &infoLocation,
@@ -279,7 +277,7 @@ void HierarchicalNSW::LoadInfo(const std::string &location)
 
     d_ = data_size / sizeof(float);
     data_level0_memory_ = (char *) malloc(maxelements_ * size_data_per_element);
-    
+
     efConstruction_ = 0;
     cur_element_count = maxelements_;
 
