@@ -222,6 +222,7 @@ void HierarchicalNSW::mutuallyConnectNewElement(const float *point, idx_t cur_c,
 
     std::mutex cur_element_count_guard;
     std::mutex global;
+    int maxLevel = -1;
 
     void HierarchicalNSW::addPoint(const float *point)
     {
@@ -235,11 +236,11 @@ void HierarchicalNSW::mutuallyConnectNewElement(const float *point, idx_t cur_c,
             cur_c = cur_element_count;
             cur_element_count++;
         }
-        //int curlevel = 0;
+        int curlevel = 0;
 
         std::unique_lock <std::mutex> templock(global);
-        //int maxlevelcopy = maxlevel_;
-        if (enterpoint_node != -1)
+        int maxlevelcopy = maxlevel;
+        if (curlevel <= maxlevelcopy)
             templock.unlock();
 
         memset((char *) get_linklist(cur_c), 0, size_data_per_element);
@@ -251,11 +252,14 @@ void HierarchicalNSW::mutuallyConnectNewElement(const float *point, idx_t cur_c,
         } else {
             // Do nothing for the first element
             enterpoint_node = 0;
+            maxLevel = curlevel;
         }
+
         //Releasing lock for the maximum level
-        //if (curlevel > enterpoint_node) {
-        //    enterpoint_node = cur_c;
-        //}
+        if (curlevel > enterpoint_node) {
+            enterpoint_node = cur_c;
+            maxLevel = curlevel;
+        }
     };
 
 
