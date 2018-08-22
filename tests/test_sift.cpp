@@ -7,38 +7,37 @@ using namespace hnswlib;
 static float test_approx(float *massQ, size_t nq,  HierarchicalNSW *quantizer, size_t d,
                          std::vector<std::priority_queue< std::pair<float,  idx_t >>> &answers, size_t k)
 {
+    //int res[k];
+    //std::ofstream out("triplet_gt.ivecs", std::ios::binary);
+
+    //for (int i = 0; i < nq; i++) {
+    //    int j = k-1;
+    //    while (result.size()) {
+    //        res[j--] = result.top().second
+    //        result.pop();
+    //    }
+    //    out.write((char *) &k, sizeof(uint32_t));
+    //    out.write((char *) res, k * sizeof(uint32_t));
+    //}
+
     size_t correct = 0;
     size_t total = 0;
-
-    int res[k];
-    std::ofstream out("triplet_gt.ivecs", std::ios::binary);
-
     for (int i = 0; i < nq; i++) {
-        std::priority_queue< std::pair<float,  idx_t >> result;
-
-        result = quantizer->searchKnn(massQ + d*i, k);
-//        std::priority_queue< std::pair<float,  idx_t >> gt(answers[i]);
-//        std::unordered_set <idx_t> g;
-//
-//        total += gt.size();
-//
-//        while (gt.size()) {
-//            g.insert(gt.top().second);//////////////////
-//            gt.pop();
-//        }
-
-        int j = k-1;
+        std::priority_queue< std::pair<float,  idx_t >> result = quantizer->searchKnn(massQ + d*i, k);
+        std::priority_queue<std::pair<float, idx_t >> gt(answers[i]);
+        std::unordered_set<idx_t> g;
+        total += gt.size();
+        while (gt.size()) {
+            g.insert(gt.top().second);
+            gt.pop();
+        }
         while (result.size()) {
-            //if (g.find(quantizer->reverse_table[result.top().second]) != g.end())
-            res[j--] = result.top().second;
-//            if (g.find(result.top().second) != g.end())
-//                correct++;
+            if (g.find(result.top().second) != g.end())
+                correct++;
             result.pop();
         }
-        out.write((char *) &k, sizeof(uint32_t));
-        out.write((char *) res, k * sizeof(uint32_t));
     }
-    return 1.f*correct / total;
+    return 1.0f * correct / total;
 }
 
 static void test_vs_recall(float *massQ, size_t nq,  HierarchicalNSW *quantizer,

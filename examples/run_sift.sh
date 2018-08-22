@@ -36,7 +36,7 @@ path_model="${PWD}/models/sift"
 path_base="${path_data}/sift1B_learn.fvecs" #sift_base.fvecs
 path_learn="${path_data}/sift_learn.fvecs"
 path_gt="${path_data}/sift_groundtruth.ivecs"
-path_q="${path_data}/sift_learn.fvecs" #query
+path_q="${path_data}/sift_query.fvecs" #query
 
 path_edges="${path_model}/hnsw_M${M}_ef${efConstruction}.ivecs"
 path_info="${path_model}/hnsw_M${M}_ef${efConstruction}.bin"
