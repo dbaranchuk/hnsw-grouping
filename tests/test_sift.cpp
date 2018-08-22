@@ -111,10 +111,10 @@ int main(int argc, char **argv)
         float mass[opt.d];
         readXvec<float>(input, mass, opt.d);
         quantizer->addPoint(mass);
-#pragma omp parallel for
+//#pragma omp parallel for
         for (int i = 1; i < opt.nb; i++) {
             float mass[opt.d];
-#pragma omp critical
+//#pragma omp critical
             {
                 readXvec<float>(input, mass, opt.d);
                 if (++j1 % report_every == 0)
