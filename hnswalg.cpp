@@ -231,6 +231,7 @@ void HierarchicalNSW::mutuallyConnectNewElement(const float *point, idx_t cur_c,
             };
             cur_c = cur_element_count;
             cur_element_count++;
+            std::cout << cur_element_count << std::endl;
         }
         int curlevel = 0;
 
