@@ -23,8 +23,10 @@ struct Parser
     size_t nb;             ///< Number of base vectors
     size_t nt;             ///< Number of learn vectors
     size_t nq;             ///< Number of queries
+    size_t nc;             ///< Number of groups
     size_t ngt;            ///< Number of groundtruth neighbours per query
     size_t d;              ///< Vector dimension
+
 
     //===================
     // Search parameters
@@ -39,10 +41,10 @@ struct Parser
     const char *path_learn;            ///< Path to a learn set
     const char *path_q;                ///< Path to queries
     const char *path_gt;               ///< Path to groundtruth
+    const char *path_group_idxs;       ///< Path to group idxs
 
     const char *path_info;             ///< Path to parameters of HNSW graph
     const char *path_edges;            ///< Path to edges of HNSW graph
-    const char *path_reordered_edges;            ///< Path to reordered edges of HNSW graph
 
     Parser(int argc, char **argv)
     {
@@ -71,6 +73,7 @@ struct Parser
             else if (!strcmp (a, "-nb")) sscanf(argv[++i], "%zu", &nb);
             else if (!strcmp (a, "-nt")) sscanf(argv[++i], "%zu", &nt);
             else if (!strcmp (a, "-nq")) sscanf(argv[++i], "%zu", &nq);
+            else if (!strcmp (a, "-nc")) sscanf(argv[++i], "%zu", &nc);
             else if (!strcmp (a, "-ngt")) sscanf(argv[++i], "%zu", &ngt);
             else if (!strcmp (a, "-d")) sscanf(argv[++i], "%zu", &d);
 
@@ -87,9 +90,9 @@ struct Parser
             else if (!strcmp (a, "-path_learn")) path_learn = argv[++i];
             else if (!strcmp (a, "-path_q")) path_q = argv[++i];
             else if (!strcmp (a, "-path_gt")) path_gt = argv[++i];
+            else if (!strcmp (a, "-path_group_idxs")) path_group_idxs = argv[++i];
             else if (!strcmp (a, "-path_info")) path_info = argv[++i];
             else if (!strcmp (a, "-path_edges")) path_edges = argv[++i];
-            else if (!strcmp (a, "-path_reordered_edges")) path_reordered_edges = argv[++i];
         }
     }
 
