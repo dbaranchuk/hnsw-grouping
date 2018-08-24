@@ -17,7 +17,7 @@ namespace hnswlib {
     }
 
 
-    std::priority_queue<std::pair<float, idx_t>> GroupHNSW::searchKNN(const float *query, size_t ef, size_t k)
+    std::priority_queue<std::pair<float, idx_t>> GroupHNSW::searchKNN(const float *query, size_t k)
     {
         VisitedList *vl = visitedlistpool->getFreeVisitedList();
         vl_type *massVisited = vl->mass;
@@ -48,10 +48,10 @@ namespace hnswlib {
                     massVisited[node] = currentV;
                     float dist = query2group_dist(query, node, knn);
 
-                    if (topResults.top().first > dist || topResults.size() < ef) {
+                    if (topResults.top().first > dist || topResults.size() < efSearch) {
                         candidateSet.emplace(-dist, node);
                         topResults.emplace(dist, node);
-                        if (topResults.size() > ef)
+                        if (topResults.size() > efSearch)
                             topResults.pop();
 
                         lowerBound = topResults.top().first;
