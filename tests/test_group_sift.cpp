@@ -94,7 +94,7 @@ int main(int argc, char **argv)
         std::vector<std::vector<idx_t>> centroid_links(opt.nc);
         {
             std::ifstream centroid_links_input("models/sift/hnsw_centroids_M8_ef300.ivecs", std::ios::binary);
-            for (size_t = 0; i < opt.nc; i++)
+            for (size_t i = 0; i < opt.nc; i++)
                 read_vector(centroid_links_input, centroid_links[i]);
         }
         quantizer->links = centroid_links;
