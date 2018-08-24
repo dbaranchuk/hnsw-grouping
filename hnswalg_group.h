@@ -42,7 +42,6 @@ namespace hnswlib {
         std::mutex global;
 
     public:
-        GroupHNSW(const std::string &infoLocation, const std::string &dataLocation, const std::string &edgeLocation);
         GroupHNSW(size_t dim, size_t ncentroids, size_t M, size_t maxM, size_t efConstruction = 500);
         ~GroupHNSW();
 

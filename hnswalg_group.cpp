@@ -12,7 +12,7 @@ namespace hnswlib {
     }
 
 
-    GroupHNSW::GroupHNSW(){
+    GroupHNSW::~GroupHNSW(){
         delete visitedlistpool;
     }
 
