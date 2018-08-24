@@ -213,13 +213,11 @@ namespace hnswlib {
         if (enterpoint_node != -1)
             templock.unlock();
 
-        std::cout << current_node << "\n";
         data[current_node] = group;
         ids[current_node] = idxs;
             
         if (enterpoint_node != -1) {
             std::priority_queue<std::pair<float, idx_t>> topResults = searchGroupLayer(current_node, efConstruction);
-            std::cout << current_node << " next\n";
             mutuallyConnectGroup(current_node, topResults);
         } else {
             // Do nothing for the first element
