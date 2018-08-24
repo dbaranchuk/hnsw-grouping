@@ -60,6 +60,7 @@ namespace hnswlib {
             }
         }
         visitedlistpool->releaseVisitedList(vl);
+
         return knn;
     }
 

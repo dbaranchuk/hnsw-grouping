@@ -4,7 +4,7 @@
 # HNSW construction parameters #
 ################################
 
-M="16"                # Min number of edges per point
+M="8"                # Min number of edges per point
 efConstruction="300"  # Max number of candidate vertices in priority queue to observe during construction
 
 ###################
