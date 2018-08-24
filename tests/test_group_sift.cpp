@@ -106,10 +106,10 @@ int main(int argc, char **argv)
         // Load Ids
         //==========
         std::cout << "Loading group idxs from " << opt.path_group_idxs << std::endl;
-        std::vector<idx_t> group_idxs(opt.nc);
+        std::vector<idx_t> group_idxs(opt.nb);
         {
             std::ifstream group_idxs_input(opt.path_group_idxs, std::ios::binary);
-            readXvec<idx_t>(group_idxs_input, group_idxs.data(), 1, opt.nc);
+            readXvec<idx_t>(group_idxs_input, group_idxs.data(), 1, opt.nb);
         }
 
         //============
@@ -120,7 +120,6 @@ int main(int argc, char **argv)
         std::vector<std::vector<idx_t>> ids(opt.nc);
         for (size_t i = 0; i < opt.nb; i++){
             int idx = group_idxs[i];
-            std::cout << idx << " ";
             ids[idx].push_back(i);
             for (int j = 0; j < opt.d; j++)
                 groups[idx].push_back(massB[i*opt.d+j]);
