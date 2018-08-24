@@ -18,7 +18,7 @@ add_library(hnsw STATIC ${hnsw_cpu_headers} ${hnsw_cpu_cpp})
 # Build each source file independently
 include_directories(../../)	# hnsw root directory
 
-SET( CMAKE_CXX_FLAGS "-Ofast -lrt -DNDEBUG -std=c++11 -DHAVE_CXX0X -openmp -march=native -fpic -w -fopenmp -ftree-vectorize -ftree-vectorizer-verbose=0" )
+SET( CMAKE_CXX_FLAGS "-Ofast -lrt -DNDEBUG -std=c++14 -DHAVE_CXX0X -openmp -march=native -fpic -w -fopenmp -ftree-vectorize -ftree-vectorizer-verbose=0" )
 target_link_libraries(hnsw)
 
 # build tests
