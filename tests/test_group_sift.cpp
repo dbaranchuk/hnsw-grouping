@@ -107,6 +107,7 @@ int main(int argc, char **argv)
         //==========
         std::cout << "Loading group idxs from " << opt.path_group_idxs << std::endl;
         std::vector<idx_t> group_idxs(opt.nc);
+        std::cout << opt.nc;
         {
             std::ifstream group_idxs_input(opt.path_group_idxs, std::ios::binary);
             readXvec<idx_t>(group_idxs_input, group_idxs.data(), 1, opt.nc);
