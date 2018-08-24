@@ -201,7 +201,7 @@ namespace hnswlib {
         idx_t current_node = 0;
         {
             std::unique_lock <std::mutex> lock(cur_element_count_guard);
-            if (cur_element_count >= maxelements_) {
+            if (cur_element_count >= ngroups) {
                 std::cout << "The number of elements exceeds the specified limit\n";
                 throw std::runtime_error("The number of elements exceeds the specified limit");
             };
@@ -218,7 +218,7 @@ namespace hnswlib {
             
         if (enterpoint_node != -1) {
             std::priority_queue<std::pair<float, idx_t>> topResults = searchGroupLayer(current_node, efConstruction);
-            mutuallyConnectNewElement(current_node, topResults);
+            mutuallyConnectGroup(current_node, topResults);
         } else {
             // Do nothing for the first element
             enterpoint_node = 0;
@@ -308,7 +308,7 @@ namespace hnswlib {
         const idx_t *id = ids[group_id];
 
         for (size_t i = 0; i < groupsize; i++){
-            float dist = fvec_L2sqr(query, data + i*d, d);
+            float dist = fvec_L2sqr(query, data.data() + i*d, d);
             dist_calc++;
             heap.emplace(-dist, id[i]);
         }
