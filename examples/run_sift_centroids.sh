@@ -11,9 +11,9 @@ efConstruction="300"  # Max number of candidate vertices in priority queue to ob
 # Data parameters #
 ###################
 
-nb="1000000"          # Number of base vectors
+nb="100000"          # Number of base vectors
 nt="100000"           # Number of learn vectors
-nc="100000"           # Number of groups
+
 nq="10000"            # Number of queries
 ngt="100"             # Number of groundtruth neighbours per query
 
@@ -33,23 +33,21 @@ efSearch="300"         # Max number of candidate vertices in priority queue to o
 path_data="${PWD}/data/sift"
 path_model="${PWD}/models/sift"
 
-path_base="${path_data}/sift_base.fvecs"
+path_base="${path_data}/sift_centroids_100k.fvecs"
 path_learn="${path_data}/sift_learn.fvecs"
 path_gt="${path_data}/sift_groundtruth.ivecs"
 path_q="${path_data}/sift_query.fvecs" #query
-path_group_idxs="${path_data}/idxs_100k.ivecs"
-path_centroids="${path_data}/sift_centroids_100k.fvecs"
 
-path_index="${path_model}/group_hnsw_M${M}_ef${efConstruction}.index"
+path_edges="${path_model}/hnsw_M${M}_ef${efConstruction}.ivecs"
+path_info="${path_model}/hnsw_M${M}_ef${efConstruction}.bin"
 
 #######
 # Run #
 #######
-${PWD}/bin/test_group_sift -M ${M} \
+${PWD}/bin/test_sift -M ${M} \
                      -efConstruction ${efConstruction} \
                      -nb ${nb} \
                      -nt ${nt} \
-                     -nc ${nc} \
                      -nq ${nq} \
                      -ngt ${ngt} \
                      -d ${d} \
@@ -59,6 +57,5 @@ ${PWD}/bin/test_group_sift -M ${M} \
                      -path_learn ${path_learn} \
                      -path_gt ${path_gt} \
                      -path_q ${path_q} \
-                     -path_group_idxs ${path_group_idxs} \
-                     -path_centroids ${path_centroids} \
-                     -path_index ${path_index}
+                     -path_edges ${path_edges} \
+                     -path_info ${path_info}

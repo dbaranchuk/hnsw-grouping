@@ -23,7 +23,7 @@ d="128"               # Vector dimension
 # Search parameters #
 #####################
 
-k="100"                 # Number of the closest vertices to search
+k="1"                  # Number of the closest vertices to search
 efSearch="300"         # Max number of candidate vertices in priority queue to observe during searching
 
 #########
