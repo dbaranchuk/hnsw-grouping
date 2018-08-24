@@ -38,8 +38,8 @@ path_learn="${path_data}/sift_learn.fvecs"
 path_gt="${path_data}/sift_groundtruth.ivecs"
 path_q="${path_data}/sift_query.fvecs" #query
 
-path_edges="${path_model}/hnsw_M${M}_ef${efConstruction}.ivecs"
-path_info="${path_model}/hnsw_M${M}_ef${efConstruction}.bin"
+path_edges="${path_model}/hnsw_centroids_M${M}_ef${efConstruction}.ivecs"
+path_info="${path_model}/hnsw_centroids_M${M}_ef${efConstruction}.bin"
 
 #######
 # Run #
