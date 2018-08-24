@@ -126,16 +126,17 @@ namespace hnswlib {
             grouplinks.push_back(topResults.top().second);
             topResults.pop();
         }
-//        for (idx_t node : grouplinks) {
-//            if (node == current_node)
-//                throw std::runtime_error("Connection to the same element");
-//
-//            std::vector<idx_t> &other_grouplinks = links[node];
-//            if (other_grouplinks.size() > maxM)
-//                throw std::runtime_error("Bad other_grouplinks size");
-//
-//            else if (other_grouplinks.size() < maxM) {
-//                other_grouplinks.push_back(current_node);
+        for (idx_t node : grouplinks) {
+            if (node == current_node)
+                throw std::runtime_error("Connection to the same element");
+
+            std::vector<idx_t> &other_grouplinks = links[node];
+            if (other_grouplinks.size() > maxM)
+                throw std::runtime_error("Bad other_grouplinks size");
+
+            else if (other_grouplinks.size() < maxM) {
+                other_grouplinks.push_back(current_node);
+            }
 //            } else {
 //                // finding the "weakest" element to replace it with the new one
 //                float d_max = group2group_dist(current_node, node);
@@ -158,7 +159,7 @@ namespace hnswlib {
 //                    i++;
 //                }
 //            }
-//        }
+        }
     }
 
 
