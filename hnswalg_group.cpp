@@ -136,29 +136,28 @@ namespace hnswlib {
 
             else if (other_grouplinks.size() < maxM) {
                 other_grouplinks.push_back(current_node);
+            } else {
+                // finding the "weakest" element to replace it with the new one
+                float d_max = group2group_dist(current_node, node);
+                std::priority_queue<std::pair<float, idx_t>> candidates;
+                candidates.emplace(d_max, current_node);
+
+                for (idx_t other_grouplink : other_grouplinks)
+                    candidates.emplace(group2group_dist(other_grouplink, node), other_grouplink);
+
+                getNeighborsByHeuristic(candidates, maxM);
+
+                size_t i = 0;
+                while (candidates.size() > 0) {
+                    idx_t link = candidates.top().second;
+                    if (i == other_grouplinks.size())
+                        other_grouplinks.push_back(link);
+                    else
+                        other_grouplinks[i] = link;
+                    candidates.pop();
+                    i++;
+                }
             }
-//            } else {
-//                // finding the "weakest" element to replace it with the new one
-//                float d_max = group2group_dist(current_node, node);
-//                std::priority_queue<std::pair<float, idx_t>> candidates;
-//                candidates.emplace(d_max, current_node);
-//
-//                for (idx_t other_grouplink : other_grouplinks)
-//                    candidates.emplace(group2group_dist(other_grouplink, node), other_grouplink);
-//
-//                getNeighborsByHeuristic(candidates, maxM);
-//
-//                size_t i = 0;
-//                while (candidates.size() > 0) {
-//                    idx_t link = candidates.top().second;
-//                    if (i == other_grouplinks.size())
-//                        other_grouplinks.push_back(link);
-//                    else
-//                        other_grouplinks[i] = link;
-//                    candidates.pop();
-//                    i++;
-//                }
-//            }
         }
     }
 
