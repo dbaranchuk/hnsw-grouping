@@ -148,7 +148,7 @@ namespace hnswlib {
                 size_t i = 0;
                 while (candidates.size() > 0) {
                     idx_t link = candidates.top().second;
-                    if (indx == other_grouplinks.size())
+                    if (i == other_grouplinks.size())
                         other_grouplinks.push_back(link);
                     else
                         other_grouplinks[i] = link;
@@ -282,9 +282,9 @@ namespace hnswlib {
     float GroupHNSW::group2group_dist(idx_t group_id1, idx_t group_id2)
     {
         size_t groupsize1 = data[group_id1].size() / d;
-        const float *group1 = data[group_id1];
+        const float *group1 = data[group_id1].data();
         size_t groupsize2 = data[group_id2].size() / d;
-        const float *group2 = data[group_id2];
+        const float *group2 = data[group_id2].data();
 
         float min_dist = -1;
         for (size_t i = 0; i < groupsize1; i++){
