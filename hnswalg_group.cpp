@@ -302,8 +302,8 @@ namespace hnswlib {
     {
         std::priority_queue<std::pair<float, idx_t>> heap;
         size_t groupsize = ids[group_id].size();
-        const float *group = data[group_id];
-        const idx_t *id = ids[group_id];
+        const float *group = data[group_id].data();
+        const idx_t *id = ids[group_id].data();
 
         for (size_t i = 0; i < groupsize; i++){
             float dist = fvec_L2sqr(query, data.data() + i*d, d);
