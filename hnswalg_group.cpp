@@ -235,7 +235,7 @@ namespace hnswlib {
         read_variable(input, ngroups);
         read_variable(input, M);
         read_variable(input, maxM);
-        read_variable(input, entrypoint_node);
+        read_variable(input, enterpoint_node);
 
         // Read data
         for (size_t i = 0; i < ngroups; i++)
@@ -262,7 +262,7 @@ namespace hnswlib {
         write_variable(output, ngroups);
         write_variable(output, M);
         write_variable(output, maxM);
-        write_variable(output, entrypoint_node);
+        write_variable(output, enterpoint_node);
 
         // Write data
         for (size_t i = 0; i < ngroups; i++)
@@ -281,7 +281,7 @@ namespace hnswlib {
     }
 
 
-    float GroupHNSW::group2group_dist(idx_t group_id1, idx_t group_id1)
+    float GroupHNSW::group2group_dist(idx_t group_id1, idx_t group_id2)
     {
         size_t groupsize1 = data[group_id1].size() / d;
         const float *group1 = data[group_id1];
