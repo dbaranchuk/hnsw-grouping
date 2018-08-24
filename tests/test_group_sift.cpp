@@ -132,6 +132,7 @@ int main(int argc, char **argv)
         size_t report_every = 10000;
         int j1 = 0;
         quantizer->addGroup(groups[0], ids[0]);
+        std::cout << "HER\n";
 #pragma omp parallel for
         for (int i = 1; i < opt.nc; i++) {
 #pragma omp critical
