@@ -58,6 +58,8 @@ namespace hnswlib {
                     }
                 }
             }
+            while(knn.size() > k)
+                knn.pop();
         }
         visitedlistpool->releaseVisitedList(vl);
 
@@ -80,7 +82,6 @@ namespace hnswlib {
         massVisited[enterpoint_node] = currentV;
         float lowerBound = dist;
 
-        std::cout << target_node << " in\n";
         while (!candidateSet.empty())
         {
             std::pair<float, idx_t> curr_el_pair = candidateSet.top();
@@ -108,7 +109,6 @@ namespace hnswlib {
             }
         }
         visitedlistpool->releaseVisitedList(vl);
-        std::cout << target_node << " out\n";
         return topResults;
     }
 
