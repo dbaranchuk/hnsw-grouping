@@ -1,6 +1,6 @@
 #include "../utils.h"
 #include "../Parser.h"
-#include "../hnswalg.h"
+#include "../hnswalg_group.h"
 
 using namespace hnswlib;
 
@@ -77,11 +77,20 @@ int main(int argc, char **argv)
     //============
     // Build HNSW
     //============
-    HierarchicalNSW *quantizer;
+    GroupHNSW *quantizer = new  GroupHNSW(opt.d, opt.nc, opt.M, 2*opt.M, opt.efConstruction);
     if ( exists(opt.path_info) &&  exists(opt.path_edges)) {
-        quantizer = new  GroupHNSW(opt.path_info, opt.path_base, opt.path_edges);
+        quantizer->read(opt.path_index);
     } else {
-        quantizer = new  GroupHNSW(opt.d, opt.nb, opt.M, 2*opt.M, opt.efConstruction);
+        //================
+        // Load centroids
+        //================
+        std::cout << "Loading centroids from " << opt.path_centroids << std::endl;
+        std::vector<float> centroids(opt.nc * opt.d);
+        {
+            std::ifstream centroids_input(opt.path_centroids, std::ios::binary);
+            readXvec<float>(centroids_input, centroids.data(), opt.d, opt.nc);
+        }
+        quantizer->centroids = centroids;
 
         //===========
         // Load Base
@@ -116,6 +125,9 @@ int main(int argc, char **argv)
                 groups[idx].push_back(massB[i*d+j]);
         }
 
+        //=====================
+        // Construct GroupHNSW
+        //=====================
         std::cout << "Constructing quantizer\n";
         size_t report_every = 10000;
         int j1 = 0;
@@ -129,9 +141,7 @@ int main(int argc, char **argv)
             }
             quantizer->addGroup(groups[i], ids[i]);
         }
-        // TODO:
-        quantizer->SaveInfo(opt.path_info);
-        quantizer->SaveEdges(opt.path_edges);
+        quantizer->write(opt.path_index);
     }
 
     //===================

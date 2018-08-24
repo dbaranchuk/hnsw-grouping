@@ -39,8 +39,7 @@ path_gt="${path_data}/sift_groundtruth.ivecs"
 path_q="${path_data}/sift_query.fvecs" #query
 path_group_idxs="${path_data}/idxs_100k.ivecs"
 
-path_edges="${path_model}/hnsw_M${M}_ef${efConstruction}.ivecs"
-path_info="${path_model}/hnsw_M${M}_ef${efConstruction}.bin"
+path_index="${path_model}/group_hnsw_M${M}_ef${efConstruction}.index"
 
 #######
 # Run #
@@ -59,6 +58,5 @@ ${PWD}/bin/test_sift -M ${M} \
                      -path_learn ${path_learn} \
                      -path_gt ${path_gt} \
                      -path_q ${path_q} \
-                     -path_group_idxs ${path_group_idxs}
-                     -path_edges ${path_edges} \
-                     -path_info ${path_info}
+                     -path_group_idxs ${path_group_idxs} \
+                     -path_index ${path_index}

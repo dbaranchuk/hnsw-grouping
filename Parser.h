@@ -42,9 +42,11 @@ struct Parser
     const char *path_q;                ///< Path to queries
     const char *path_gt;               ///< Path to groundtruth
     const char *path_group_idxs;       ///< Path to group idxs
+    const char *path_centroids;        ///< Path to centroids
 
     const char *path_info;             ///< Path to parameters of HNSW graph
     const char *path_edges;            ///< Path to edges of HNSW graph
+    const char *path_index;            ///< Path to the GroupHNSW index
 
     Parser(int argc, char **argv)
     {
@@ -91,8 +93,10 @@ struct Parser
             else if (!strcmp (a, "-path_q")) path_q = argv[++i];
             else if (!strcmp (a, "-path_gt")) path_gt = argv[++i];
             else if (!strcmp (a, "-path_group_idxs")) path_group_idxs = argv[++i];
+            else if (!strcmp (a, "-path_centroids")) path_centroids = argv[++i];
             else if (!strcmp (a, "-path_info")) path_info = argv[++i];
             else if (!strcmp (a, "-path_edges")) path_edges = argv[++i];
+            else if (!strcmp (a, "-path_index")) path_index = argv[++i];
         }
     }
 
@@ -126,6 +130,7 @@ struct Parser
                 "    -path_gt filename                 Path to groundtruth\n"
                 "    -path_info filename               Path to parameters of HNSW graph\n"
                 "    -path_edges filename              Path to edges of HNSW graph\n"
+                "    -path_index filename              Path to the GroupHNSW index\n"
         );
         exit(0);
     }

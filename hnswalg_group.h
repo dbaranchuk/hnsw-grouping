@@ -14,16 +14,6 @@
 #include <queue>
 #include "utils.h"
 
-template<typename T>
-static void writeBinaryPOD(std::ostream &out, const T &podRef) {
-    out.write((char *) &podRef, sizeof(T));
-}
-
-template<typename T>
-static void readBinaryPOD(std::istream &in, T &podRef) {
-    in.read((char *) &podRef, sizeof(T));
-}
-
 namespace hnswlib {
     typedef uint32_t idx_t;
 
@@ -60,16 +50,10 @@ namespace hnswlib {
         void getNeighborsByHeuristic(std::priority_queue<std::pair<float, idx_t>> &topResults, size_t NN);
         void mutuallyConnectGroup(idx_t current_node, std::priority_queue<std::pair<float, idx_t>> &topResults)
         void addGroup(const std::vector<float> &group, const std::vector<idx_t> &idxs);
-
         std::priority_queue<std::pair<float, idx_t >> searchKnn(const float *query, size_t ef, size_t k);
 
-        // TODO:
-        void SaveInfo(const std::string &location);
-        void SaveEdges(const std::string &location);
-
-        void LoadInfo(const std::string &location);
-        void LoadData(const std::string &location);
-        void LoadEdges(const std::string &location);
+        void read(const std::string &location);
+        void write(const std::string &location);
 
     private:
         // TODO:

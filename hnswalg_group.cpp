@@ -8,13 +8,14 @@ namespace hnswlib {
         data.resize(ngroups);
         links.resize(ngroups);
         ids.resize(ngroups);
-
         visitedlistpool = new VisitedListPool(1, ngroups);
     }
+
 
     GroupHNSW::GroupHNSW(){
         delete visitedlistpool;
     }
+
 
     std::priority_queue<std::pair<float, idx_t>> GroupHNSW::searchKNN(const float *query, size_t ef, size_t k)
     {
@@ -110,6 +111,7 @@ namespace hnswlib {
         return topResults;
     }
 
+
     void GroupHNSW::mutuallyConnectGroup(idx_t current_node, std::priority_queue<std::pair<float, idx_t>> &topResults)
     {
         getNeighborsByHeuristic(topResults, M);
@@ -159,6 +161,7 @@ namespace hnswlib {
         }
     }
 
+
     void GroupHNSW::getNeighborsByHeuristic(std::priority_queue<std::pair<float, idx_t>> &topResults, size_t NN)
     {
         if (topResults.size() < NN)
@@ -192,6 +195,7 @@ namespace hnswlib {
             topResults.emplace(-elem.first, elem.second);
     }
 
+
     void GroupHNSW::addGroup(const std::vector<float> &group, const std::vector<idx_t> &idxs)
     {
         idx_t current_node = 0;
@@ -219,111 +223,63 @@ namespace hnswlib {
             // Do nothing for the first element
             enterpoint_node = 0;
         }
-    };
+    }
 
 
-    HierarchicalNSW::HierarchicalNSW(const std::string &infoLocation,
-                                     const std::string &dataLocation,
-                                     const std::string &edgeLocation)
+    void GroupHNSW::read(const std::string &location)
     {
-        LoadInfo(infoLocation);
-        LoadData(dataLocation);
-        LoadEdges(edgeLocation);
+        std::cout << "Loading index from " << location << std::endl;
+        std::ifstream input(location, std::ios::binary);
+
+        read_variable(input, d);
+        read_variable(input, ngroups);
+        read_variable(input, M);
+        read_variable(input, maxM);
+        read_variable(input, entrypoint_node);
+
+        // Read data
+        for (size_t i = 0; i < ngroups; i++)
+            read_vector(input, data[i]);
+
+        // Read vector indices
+        for (size_t i = 0; i < ngroups; i++)
+            read_vector(input, ids[i]);
+
+        // Read links
+        for (size_t i = 0; i < ngroups; i++)
+            read_vector(input, links[i]);
+
+        // Read centroids
+        read_vector(input, centroids);
     }
 
+    void GroupHNSW::write(const std::string &location)
+    {
+        std::cout << "Saving index to " << location << std::endl;
+        std::ofstream output(location, std::ios::binary);
 
+        write_variable(output, d);
+        write_variable(output, ngroups);
+        write_variable(output, M);
+        write_variable(output, maxM);
+        write_variable(output, entrypoint_node);
 
+        // Write data
+        for (size_t i = 0; i < ngroups; i++)
+            write_vector(output, data[i]);
 
+        // Write vector indices
+        for (size_t i = 0; i < ngroups; i++)
+            write_vector(output, ids[i]);
 
-void HierarchicalNSW::SaveInfo(const std::string &location)
-{
-    std::cout << "Saving info to " << location << std::endl;
-    std::ofstream output(location, std::ios::binary);
+        // Write links
+        for (size_t i = 0; i < ngroups; i++)
+            write_vector(output, links[i]);
 
-    writeBinaryPOD(output, maxelements_);
-    writeBinaryPOD(output, enterpoint_node);
-    writeBinaryPOD(output, data_size);
-    writeBinaryPOD(output, offset_data);
-    writeBinaryPOD(output, size_data_per_element);
-    writeBinaryPOD(output, M_);
-    writeBinaryPOD(output, maxM_);
-    writeBinaryPOD(output, size_links_level0);
-}
-
-
-void HierarchicalNSW::SaveEdges(const std::string &location)
-{
-    std::cout << "Saving edges to " << location << std::endl;
-    std::ofstream output(location, std::ios::binary);
-
-    for (size_t i = 0; i < maxelements_; i++) {
-        uint8_t *ll_cur = get_linklist(i);
-        uint32_t size = *ll_cur;
-
-        output.write((char *) &size, sizeof(uint32_t));
-        idx_t *data = (idx_t *)(ll_cur + 1);
-        output.write((char *) data, sizeof(idx_t) * size);
+        // Write centroids
+        write_vector(output, centroids);
     }
-}
 
-void HierarchicalNSW::LoadInfo(const std::string &location)
-{
-    std::cout << "Loading info from " << location << std::endl;
-    std::ifstream input(location, std::ios::binary);
-
-    readBinaryPOD(input, maxelements_);
-    readBinaryPOD(input, enterpoint_node);
-    readBinaryPOD(input, data_size);
-    readBinaryPOD(input, offset_data);
-    readBinaryPOD(input, size_data_per_element);
-    readBinaryPOD(input, M_);
-    readBinaryPOD(input, maxM_);
-    readBinaryPOD(input, size_links_level0);
-
-    d_ = data_size / sizeof(float);
-    data_level0_memory_ = (char *) malloc(maxelements_ * size_data_per_element);
-
-    efConstruction_ = 0;
-    cur_element_count = maxelements_;
-
-    visitedlistpool = new VisitedListPool(1, maxelements_);
-}
-
-void HierarchicalNSW::LoadData(const std::string &location)
-{
-    std::cout << "Loading data from " << location << std::endl;
-    std::ifstream input(location, std::ios::binary);
-
-    uint32_t dim;
-    float mass[d_];
-    for (size_t i = 0; i < maxelements_; i++) {
-        input.read((char *) &dim, sizeof(uint32_t));
-        if (dim != d_) {
-            std::cout << "Wront data dim" << std::endl;
-            exit(1);
-        }
-        input.read((char *) mass, dim * sizeof(float));
-        memcpy(getDataByInternalId(i), mass, data_size);
-    }
-}
-
-void HierarchicalNSW::LoadEdges(const std::string &location)
-{
-    std::cout << "Loading edges from " << location << std::endl;
-    std::ifstream input(location, std::ios::binary);
-
-    uint32_t size;
-
-    for (size_t i = 0; i < maxelements_; i++) {
-        input.read((char *) &size, sizeof(uint32_t));
-
-        uint8_t *ll_cur = get_linklist(i);
-        *ll_cur = size;
-        idx_t *data = (idx_t *)(ll_cur + 1);
-
-        input.read((char *) data, size * sizeof(idx_t));
-    }
-}
 
     float GroupHNSW::group2group_dist(idx_t group_id1, idx_t group_id1)
     {
