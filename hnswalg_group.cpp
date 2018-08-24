@@ -41,8 +41,7 @@ namespace hnswlib {
 
             candidateSet.pop();
             idx_t current_node = curr_el_pair.second;
-            idx_t *grouplinks = links[current_node].data();
-            size_t nlinks = links[current_node].size();
+            const std::vector<idx_t> &grouplinks = links[current_node];
 
             for (idx_t node : grouplinks){
                 if (massVisited[node] != currentV) {
@@ -88,8 +87,7 @@ namespace hnswlib {
 
             candidateSet.pop();
             idx_t current_node = curr_el_pair.second;
-            idx_t *grouplinks = links[current_node].data();
-            size_t nlinks = links[current_node].size();
+            const std::vector<idx_t> &grouplinks = links[current_node];
 
             for (idx_t node : grouplinks){
                 if (massVisited[node] != currentV) {
