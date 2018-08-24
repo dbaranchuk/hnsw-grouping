@@ -148,7 +148,7 @@ namespace hnswlib {
 
                 for (idx_t other_grouplink : other_grouplinks)
                     //candidates.emplace(group2group_dist(other_grouplink, node), other_grouplink);
-                    candidates.emplace(fvec_L2sqr(centroids.data() + other_grouplink*d, centroids.data() + node*d, d);, other_grouplink);
+                    candidates.emplace(fvec_L2sqr(centroids.data() + other_grouplink*d, centroids.data() + node*d, d), other_grouplink);
 
                 getNeighborsByHeuristic(candidates, maxM);
 
