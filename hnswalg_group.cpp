@@ -217,6 +217,7 @@ namespace hnswlib {
             
         if (enterpoint_node != -1) {
             std::priority_queue<std::pair<float, idx_t>> topResults = searchGroupLayer(current_node, efConstruction);
+            std::cout << current_node << " next\n";
             mutuallyConnectGroup(current_node, topResults);
         } else {
             // Do nothing for the first element
