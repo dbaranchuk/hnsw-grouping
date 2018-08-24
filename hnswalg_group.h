@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 #include <map>
 #include <cmath>
@@ -22,7 +23,8 @@ namespace hnswlib {
         size_t ngroups;
         size_t cur_element_count;
         size_t efConstruction;
-
+        size_t efSearch;
+        
         VisitedListPool *visitedlistpool;
         idx_t enterpoint_node = -1;
 

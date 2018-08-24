@@ -4,7 +4,7 @@
 
 using namespace hnswlib;
 
-static float test_approx(float *massQ, size_t nq,  HierarchicalNSW *quantizer, size_t d,
+static float test_approx(float *massQ, size_t nq,  GroupHNSW *quantizer, size_t d,
                          std::vector<std::priority_queue< std::pair<float,  idx_t >>> &answers, size_t k)
 {
     size_t correct = 0;
@@ -27,7 +27,7 @@ static float test_approx(float *massQ, size_t nq,  HierarchicalNSW *quantizer, s
     return 1.0f * correct / total;
 }
 
-static void test_vs_recall(float *massQ, size_t nq,  HierarchicalNSW *quantizer,
+static void test_vs_recall(float *massQ, size_t nq,  GroupHNSW *quantizer,
                            size_t d, std::vector<std::priority_queue< std::pair<float,  idx_t>>> &answers, size_t k)
 {
     std::vector<size_t> efs;// = {k}; //= {30, 100, 460};
