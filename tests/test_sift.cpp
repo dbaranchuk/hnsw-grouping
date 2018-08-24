@@ -44,10 +44,16 @@ static void test_vs_recall(float *massQ, size_t nq,  HierarchicalNSW *quantizer,
                            size_t d, std::vector<std::priority_queue< std::pair<float,  idx_t>>> &answers, size_t k)
 {
     std::vector<size_t> efs;// = {k}; //= {30, 100, 460};
-    for (int i = 1; i < 10; i++) efs.push_back(i);
-    for (int i = 10; i < 100; i += 10) efs.push_back(i);
-    for (int i = 100; i <= 500; i += 40) efs.push_back(i);
-
+    if (k < 10) {
+        for (int i = k; i < 10; i++) efs.push_back(i);
+        for (int i = 10; i < 100; i += 10) efs.push_back(i);
+        for (int i = 100; i <= 500; i += 40) efs.push_back(i);
+    } else if (k < 100) {
+        for (int i = k; i < 100; i += 10) efs.push_back(i);
+        for (int i = 100; i <= 500; i += 40) efs.push_back(i);
+    } else {
+        for (int i = k; i <= 500; i += 40) efs.push_back(i);
+    }
     for (size_t ef : efs) {
         quantizer->efSearch = ef;
         quantizer->dist_calc = 0;
