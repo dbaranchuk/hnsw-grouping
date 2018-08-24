@@ -78,7 +78,7 @@ int main(int argc, char **argv)
     // Build HNSW
     //============
     GroupHNSW *quantizer = new  GroupHNSW(opt.d, opt.nc, opt.M, 2*opt.M, opt.efConstruction);
-    if ( exists(opt.path_info) &&  exists(opt.path_edges)) {
+    if (exists(opt.path_index)) {
         quantizer->read(opt.path_index);
     } else {
         //================
