@@ -140,7 +140,7 @@ int main(int argc, char **argv)
                     std::cout << j1 / (0.01 * opt.nc) << " %\n";
             }
             quantizer->addGroup(groups[i], ids[i]);
-            td::cout << i << " ";
+            std::cout << i << " ";
         }
         quantizer->write(opt.path_index);
     }
