@@ -105,7 +105,7 @@ int main(int argc, char **argv)
         //==========
         // Load Ids
         //==========
-        std::cout << "Loading group idxs from " << opt.path_group_ids << std::endl;
+        std::cout << "Loading group idxs from " << opt.path_group_idxs << std::endl;
         std::vector<idx_t> group_idxs(opt.nc);
         {
             std::ifstream group_idxs_input(opt.path_group_idxs, std::ios::binary);

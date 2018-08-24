@@ -17,7 +17,7 @@ namespace hnswlib {
     }
 
 
-    std::priority_queue<std::pair<float, idx_t>> GroupHNSW::searchKNN(const float *query, size_t k)
+    std::priority_queue<std::pair<float, idx_t>> GroupHNSW::searchKnn(const float *query, size_t k)
     {
         VisitedList *vl = visitedlistpool->getFreeVisitedList();
         vl_type *massVisited = vl->mass;

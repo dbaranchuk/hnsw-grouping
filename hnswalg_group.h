@@ -47,12 +47,11 @@ namespace hnswlib {
         GroupHNSW(size_t dim, size_t ncentroids, size_t M, size_t maxM, size_t efConstruction = 500);
         ~GroupHNSW();
 
-        std::priority_queue<std::pair<float, idx_t>> searchKNN(const float *query, size_t k);
+        std::priority_queue<std::pair<float, idx_t>> searchKnn(const float *query, size_t k);
         std::priority_queue<std::pair<float, idx_t>> searchGroupLayer(idx_t target_node, size_t ef);
         void getNeighborsByHeuristic(std::priority_queue<std::pair<float, idx_t>> &topResults, size_t NN);
         void mutuallyConnectGroup(idx_t current_node, std::priority_queue<std::pair<float, idx_t>> &topResults);
         void addGroup(const std::vector<float> &group, const std::vector<idx_t> &idxs);
-        std::priority_queue<std::pair<float, idx_t >> searchKnn(const float *query, size_t ef, size_t k);
 
         void read(const std::string &location);
         void write(const std::string &location);
