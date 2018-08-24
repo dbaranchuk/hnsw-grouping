@@ -81,7 +81,7 @@ std::priority_queue<std::pair<float, idx_t>> HierarchicalNSW::searchBaseLayer(co
             _mm_prefetch((char *) (massVisited + *(data + j + 1)), _MM_HINT_T0);
             _mm_prefetch(getDataByInternalId(*(data + j + 1)), _MM_HINT_T0);
 
-            if (!(massVisited[tnum] == currentV)) {
+            if (massVisited[tnum] != currentV) {
                 massVisited[tnum] = currentV;
 
                 float dist = fvec_L2sqr(point, getDataByInternalId(tnum), d_);
