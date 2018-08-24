@@ -1,4 +1,4 @@
-#include "hnswalg.h"
+#include "hnswalg_group.h"
 
 namespace hnswlib {
 
