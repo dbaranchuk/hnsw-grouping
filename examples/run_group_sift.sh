@@ -38,13 +38,14 @@ path_learn="${path_data}/sift_learn.fvecs"
 path_gt="${path_data}/sift_groundtruth.ivecs"
 path_q="${path_data}/sift_query.fvecs" #query
 path_group_idxs="${path_data}/idxs_100k.ivecs"
+path_centroids="${path_centroids}/sift_centroids_100k.fvecs"
 
 path_index="${path_model}/group_hnsw_M${M}_ef${efConstruction}.index"
 
 #######
 # Run #
 #######
-${PWD}/bin/test_sift -M ${M} \
+${PWD}/bin/test_group_sift -M ${M} \
                      -efConstruction ${efConstruction} \
                      -nb ${nb} \
                      -nt ${nt} \
@@ -59,4 +60,5 @@ ${PWD}/bin/test_sift -M ${M} \
                      -path_gt ${path_gt} \
                      -path_q ${path_q} \
                      -path_group_idxs ${path_group_idxs} \
+                     -path_centroids ${path_centroids} \
                      -path_index ${path_index}
