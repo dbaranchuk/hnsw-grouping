@@ -57,7 +57,6 @@ namespace hnswlib {
         void write(const std::string &location);
 
     private:
-        // TODO:
         float group2group_dist(idx_t group_id1, idx_t group_id2);
         float query2group_dist(const float *query, idx_t group_id, std::priority_queue<std::pair<float, idx_t>> &knn);
     };

@@ -316,7 +316,7 @@ namespace hnswlib {
         float result = -heap.top().first;
         //join heaps
         while(!heap.empty()) {
-            knn.push(heap.top());
+            knn.emplace(-heap.top().first, heap.top().second);
             heap.pop();
         }
         return result;
