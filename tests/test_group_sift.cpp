@@ -118,7 +118,7 @@ int main(int argc, char **argv)
         std::cout << "Forming groups" << std::endl;
         std::vector<std::vector<float>> groups(opt.nc);
         std::vector<std::vector<idx_t>> ids(opt.nc);
-        for (size_t i = 0; i < opt,nb; i++){
+        for (size_t i = 0; i < opt.nb; i++){
             int idx = group_idxs[i];
             ids[idx].push_back(i);
             for (int j = 0; j < opt.d; j++)
