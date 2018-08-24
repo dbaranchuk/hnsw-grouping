@@ -211,7 +211,7 @@ namespace hnswlib {
         if (enterpoint_node != -1)
             templock.unlock();
 
-        std::cout << current_node << " ";
+        std::cout << current_node << "\n";
         data[current_node] = group;
         ids[current_node] = idxs;
             
