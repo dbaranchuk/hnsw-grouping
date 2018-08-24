@@ -86,6 +86,18 @@ int main(int argc, char **argv)
     GroupHNSW *quantizer = new  GroupHNSW(opt.d, opt.nc, opt.M, 2*opt.M, opt.efConstruction);
     if (exists(opt.path_index)) {
         quantizer->read(opt.path_index);
+
+        //==========================
+        // Load hnsw centroid edges
+        //==========================
+        std::cout << "Loading hnsw centroid edges from " << opt.path_centroids << std::endl;
+        std::vector<std::vector<idx_t>> centroid_links(opt.nc);
+        {
+            std::ifstream centroid_links_input("models/sift/hnsw_centroids_M8_ef300.ivecs", std::ios::binary);
+            for (size_t = 0; i < opt.nc; i++)
+                read_vector(centroid_links_input, centroid_links[i]);
+        }
+        quantizer->links = centroid_links;
     } else {
         //================
         // Load centroids
