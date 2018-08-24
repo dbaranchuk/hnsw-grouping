@@ -40,7 +40,7 @@ path_q="${path_data}/sift_query.fvecs" #query
 path_group_idxs="${path_data}/idxs_100k.ivecs"
 path_centroids="${path_data}/sift_centroids_100k.fvecs"
 
-path_index="${path_model}/group_hnsw_M${M}_ef${efConstruction}.index"
+path_index="${path_model}/group_hnsw_centroid_M${M}_ef${efConstruction}.index"
 
 #######
 # Run #

@@ -77,6 +77,7 @@ namespace hnswlib {
         std::priority_queue<std::pair<float, idx_t >> candidateSet;
 
         float dist = group2group_dist(target_node, enterpoint_node);
+        //float dist = fvec_L2sqr(centroids.data() + target_node*d, centroids.data() + enterpoint_node*d, d);
         topResults.emplace(dist, enterpoint_node);
         candidateSet.emplace(-dist, enterpoint_node);
         massVisited[enterpoint_node] = currentV;
@@ -96,6 +97,7 @@ namespace hnswlib {
                 if (massVisited[node] != currentV) {
                     massVisited[node] = currentV;
                     float dist = group2group_dist(target_node, node);
+                    //float dist = fvec_L2sqr(centroids.data() + target_node*d, centroids.data() + node*d, d);
 
                     if (topResults.top().first > dist || topResults.size() < ef) {
                         candidateSet.emplace(-dist, node);
@@ -140,11 +142,13 @@ namespace hnswlib {
             } else {
                 // finding the "weakest" element to replace it with the new one
                 float d_max = group2group_dist(current_node, node);
+                //float dist = fvec_L2sqr(centroids.data() + current_node*d, centroids.data() + node*d, d);
                 std::priority_queue<std::pair<float, idx_t>> candidates;
                 candidates.emplace(d_max, current_node);
 
                 for (idx_t other_grouplink : other_grouplinks)
                     candidates.emplace(group2group_dist(other_grouplink, node), other_grouplink);
+                    //candidates.emplace(fvec_L2sqr(centroids.data() + other_grouplink*d, centroids.data() + node*d, d);, other_grouplink);
 
                 getNeighborsByHeuristic(candidates, maxM);
 
@@ -185,6 +189,7 @@ namespace hnswlib {
             bool good = true;
             for (std::pair<float, idx_t> current2 : returnlist) {
                 float curdist = group2group_dist(current2.second, current.second);
+                //float curdist = fvec_L2sqr(centroids.data() + current2.second*d, centroids.data() + current.second*d, d);
                 if (curdist < dist_to_query) {
                     good = false;
                     break;

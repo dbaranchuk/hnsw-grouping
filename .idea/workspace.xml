@@ -13,6 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eea23355-286c-4603-b8c0-8146464b8097" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/hnswalg_group.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/hnswalg_group.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_group_sift.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_group_sift.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -48,7 +49,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="5131" />
+          <entry key="cpp" value="5338" />
           <entry key="h" value="1094" />
           <entry key="sh" value="342" />
           <entry key="txt" value="3" />
@@ -59,7 +60,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="3" />
           <entry key="Doxygen file" value="4" />
-          <entry key="ObjectiveC" value="6221" />
+          <entry key="ObjectiveC" value="6428" />
           <entry key="PLAIN_TEXT" value="342" />
         </counts>
       </usages-collector>
@@ -67,11 +68,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hnswalg_group.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4196">
-              <caret line="318" column="60" selection-start-line="318" selection-start-column="60" selection-end-line="318" selection-end-column="60" />
+            <state relative-caret-position="1816">
+              <caret line="191" column="116" selection-start-line="191" selection-start-column="116" selection-end-line="191" selection-end-column="116" />
             </state>
           </provider>
         </entry>
@@ -103,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_group_sift.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="95" column="69" selection-start-line="95" selection-start-column="69" selection-end-line="95" selection-end-column="69" />
+            <state relative-caret-position="1017">
+              <caret line="137" column="35" selection-start-line="137" selection-start-column="35" selection-end-line="137" selection-end-column="35" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -186,13 +187,13 @@
         <option value="$PROJECT_DIR$/hnswalg.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/hnswalg.cpp" />
-        <option value="$PROJECT_DIR$/hnswalg_group.cpp" />
         <option value="$PROJECT_DIR$/hnswalg_group.h" />
         <option value="$PROJECT_DIR$/examples/run_sift.sh" />
         <option value="$PROJECT_DIR$/examples/run_group_sift.sh" />
         <option value="$PROJECT_DIR$/examples/run_sift_centroids.sh" />
         <option value="$PROJECT_DIR$/tests/test_sift.cpp" />
         <option value="$PROJECT_DIR$/tests/test_group_sift.cpp" />
+        <option value="$PROJECT_DIR$/hnswalg_group.cpp" />
       </list>
     </option>
   </component>
@@ -293,12 +294,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1534835984558</updated>
-      <workItem from="1534835988843" duration="36694000" />
+      <workItem from="1534835988843" duration="37301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36694000" />
+    <option name="totallyTimeSpent" value="37301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-30" width="1920" height="1110" extended-state="6" />
@@ -393,13 +394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnswalg_group.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4196">
-          <caret line="318" column="60" selection-start-line="318" selection-start-column="60" selection-end-line="318" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hnswalg.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3671">
@@ -440,11 +434,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_group_sift.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="95" column="69" selection-start-line="95" selection-start-column="69" selection-end-line="95" selection-end-column="69" />
+        <state relative-caret-position="1017">
+          <caret line="137" column="35" selection-start-line="137" selection-start-column="35" selection-end-line="137" selection-end-column="35" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hnswalg_group.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1816">
+          <caret line="191" column="116" selection-start-line="191" selection-start-column="116" selection-end-line="191" selection-end-column="116" />
         </state>
       </provider>
     </entry>
