@@ -306,7 +306,7 @@ namespace hnswlib {
         const idx_t *id = ids[group_id].data();
 
         for (size_t i = 0; i < groupsize; i++){
-            float dist = fvec_L2sqr(query, data.data() + i*d, d);
+            float dist = fvec_L2sqr(query, group + i*d, d);
             dist_calc++;
             heap.emplace(-dist, id[i]);
         }
