@@ -129,7 +129,7 @@ int main(int argc, char **argv)
         // Construct GroupHNSW
         //=====================
         std::cout << "Constructing quantizer\n";
-        size_t report_every = 10000;
+        size_t report_every = 1000;
         int j1 = 0;
         quantizer->addGroup(groups[0], ids[0]);
 #pragma omp parallel for
