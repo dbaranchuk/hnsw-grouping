@@ -195,7 +195,7 @@ namespace hnswlib {
             }
         }
         for (idx_t idx : res) {
-            if (res[idx] == cur_c)
+            if (idx == cur_c)
                 throw std::runtime_error("Connection to the same element");
 
             size_t resMmax = level ? M_ : maxM_;
