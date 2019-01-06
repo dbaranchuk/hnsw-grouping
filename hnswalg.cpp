@@ -529,7 +529,6 @@ namespace hnswlib {
     std::vector<idx_t> HierarchicalNSW::bfs(idx_t initial_vertex_id, idx_t gt, size_t margin)
     {
         size_t min_path_length = maxelements_;
-        size_t max_path_length = 0;
         size_t current_depth = 0;
 
         std::vector<Vertex> forward_vertices(maxelements_);
@@ -558,18 +557,19 @@ namespace hnswlib {
             for (size_t i = 0; i < size; i++) {
                 idx_t next_vertex_id = *(data + i);
                 Vertex *next_vertex = forward_vertices.data() + next_vertex_id;
-                next_vertex->vertex_id = next_vertex_id;
                 next_vertex->prev_vertex_ids.push_back(vertex->vertex_id);
 
-                if (!next_vertex->is_visited) {
-                    next_vertex->min_path_length = vertex->min_path_length + 1;
-                    next_vertex->is_visited = true;
-                    forward_queue.push({current_depth + 1, next_vertex_id});
-                    forward_counter++;
-                }
+                if (next_vertex->is_visited)
+                    continue;
+
+                next_vertex->vertex_id = next_vertex_id;
+                next_vertex->is_visited = true;
+                next_vertex->min_path_length = vertex->min_path_length + 1;
+                forward_queue.push({current_depth + 1, next_vertex_id});
+                forward_counter++;
             }
         }
-//        std::cout << "Min path length: " << min_path_length << " Max path length " << max_path_length << std::endl;
+//        std::cout << "Min path length: " << min_path_length << std::endl;
 
         // Backward pass
         current_depth = 0;
@@ -600,8 +600,8 @@ namespace hnswlib {
                     continue;
 
                 backward_vertex->vertex_id = prev_vertex_id;
-                backward_vertex->min_path_length = vertex->min_path_length + 1;
                 backward_vertex->is_visited = true;
+                backward_vertex->min_path_length = vertex->min_path_length + 1;
                 backward_queue.push({current_depth + 1, prev_vertex_id});
                 backward_counter++;
             }
