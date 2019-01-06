@@ -45,7 +45,7 @@ path_info="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}_levels.bin"
 #######
 # Run #
 #######
-${PWD}/bin/test_bfs -M ${M} \
+OMP_NUM_THREADS=12 ${PWD}/bin/test_bfs -M ${M} \
                      -efConstruction ${efConstruction} \
                      -nb ${nb} \
                      -nt ${nt} \
