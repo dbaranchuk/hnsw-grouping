@@ -528,7 +528,6 @@ namespace hnswlib {
      */
     std::vector<idx_t> HierarchicalNSW::bfs(idx_t initial_vertex_id, idx_t gt, size_t margin)
     {
-        StopW stopw =  StopW();
         size_t min_path_length = maxelements_;
         size_t current_depth = 0;
 
@@ -609,8 +608,8 @@ namespace hnswlib {
             results.push_back(vertex.vertex_id);
             results.push_back((idx_t)vertex.min_path_length);
         }
-        std::cout << forward_queue.size() << " " << backward_queue.size() << " Time: " <<
-                     stopw.getElapsedTimeMicro() * 1e-6 << std::endl;
+//        std::cout << forward_queue.size() << " " << backward_queue.size() << " Time: " <<
+//                     stopw.getElapsedTimeMicro() * 1e-6 << std::endl;
         return results;
     }
 }

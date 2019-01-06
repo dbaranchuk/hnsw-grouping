@@ -8,11 +8,13 @@ static void test_approx(float *massQ, size_t nq,
                         HierarchicalNSW *quantizer, size_t d,
                         std::vector<idx_t> &answers)
 {
+    StopW stopw =  StopW();
     std::vector<std::vector<idx_t>> results(nq);
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 100; i++) {
         idx_t enterpoint = quantizer->get_enterpoint(massQ + d*i);
         results[i] = quantizer->bfs(enterpoint, answers[i], 2);
     }
+    std::cout << "TIme(s): " << stopw.getElapsedTimeMicro() * 1e-6 / 10 << std::endl;
 }
 
 
