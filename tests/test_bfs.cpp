@@ -23,7 +23,6 @@ static void test_approx(float *massQ, size_t nq,
 
     for (auto result : results){
         uint32_t dim = result.size();
-        std::cout << dim << std::endl;
         out.write((char *) &dim, sizeof(uint32_t));
         out.write((char *) result.data(), dim * sizeof(uint32_t));
     }
