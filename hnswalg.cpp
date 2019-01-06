@@ -529,6 +529,7 @@ namespace hnswlib {
     std::vector<idx_t> HierarchicalNSW::bfs(idx_t initial_vertex_id, idx_t gt, size_t margin)
     {
         size_t min_path_length = maxelements_;
+        size_t max_path_length = 0;
         size_t current_depth = 0;
 
         std::vector<Vertex> forward_vertices(maxelements_);
@@ -538,17 +539,18 @@ namespace hnswlib {
         forward_vertices[initial_vertex_id].vertex_id = initial_vertex_id;
         forward_vertices[initial_vertex_id].is_visited = true;
 
+        size_t forward_counter = 0;
         // Forward pass
         while (!forward_queue.empty()) {
             current_depth = forward_queue.front().first;
             Vertex *vertex = forward_vertices.data() + forward_queue.front().second;
             forward_queue.pop();
 
-            if (current_depth > min_path_length + margin)
-                break;
-
             if (vertex->vertex_id == gt)
                 min_path_length = vertex->min_path_length;
+
+            if (current_depth == min_path_length + margin)
+                break;
 
             uint16_t *ll_cur = get_linklist(vertex->vertex_id);
             size_t size = *ll_cur;
@@ -563,9 +565,11 @@ namespace hnswlib {
                     next_vertex->min_path_length = vertex->min_path_length + 1;
                     next_vertex->is_visited = true;
                     forward_queue.push({current_depth + 1, next_vertex_id});
+                    forward_counter++;
                 }
             }
         }
+//        std::cout << "Min path length: " << min_path_length << " Max path length " << max_path_length << std::endl;
 
         // Backward pass
         current_depth = 0;
@@ -577,17 +581,18 @@ namespace hnswlib {
 
         backward_queue.push({current_depth, gt});
 
+        size_t backward_counter = 0;
         while (!backward_queue.empty()) {
             current_depth = backward_queue.front().first;
             Vertex *vertex = backward_vertices.data() + backward_queue.front().second;
             backward_queue.pop();
 
-            if (current_depth > min_path_length + margin)
-                break;
-
             // check if is enterpoint
             if (vertex->vertex_id == initial_vertex_id)
                 min_path_length = vertex->min_path_length;
+
+            if (current_depth == min_path_length + margin)
+                break;
 
             for (idx_t prev_vertex_id : forward_vertices[vertex->vertex_id].prev_vertex_ids) {
                 Vertex *backward_vertex = backward_vertices.data() + prev_vertex_id;
@@ -598,6 +603,7 @@ namespace hnswlib {
                 backward_vertex->min_path_length = vertex->min_path_length + 1;
                 backward_vertex->is_visited = true;
                 backward_queue.push({current_depth + 1, prev_vertex_id});
+                backward_counter++;
             }
         }
 
@@ -608,7 +614,7 @@ namespace hnswlib {
             results.push_back(vertex.vertex_id);
             results.push_back((idx_t)vertex.min_path_length);
         }
-//        std::cout << forward_queue.size() << " " << backward_queue.size() << " Time: " <<
+//        std::cout << forward_counter << " " << backward_counter << std::endl; //" Time: " <<
 //                     stopw.getElapsedTimeMicro() * 1e-6 << std::endl;
         return results;
     }

@@ -16,13 +16,14 @@ static void test_approx(float *massQ, size_t nq,
         idx_t enterpoint = quantizer->get_enterpoint(massQ + d*i);
         results[i] = quantizer->bfs(enterpoint, answers[i], 2);
     }
-    std::cout << "TIme(s): " << stopw.getElapsedTimeMicro() * 1e-6 / 100 << std::endl;
+    std::cout << "TIme(s): " << stopw.getElapsedTimeMicro() * 1e-6 / nq << std::endl;
 
 
     std::ofstream out("dist_cache_margin2.ivecs", std::ios::binary);
 
     for (auto result : results){
         uint32_t dim = result.size();
+        std::cout << dim << std::endl;
         out.write((char *) &dim, sizeof(uint32_t));
         out.write((char *) result.data(), dim * sizeof(uint32_t));
     }
