@@ -2,6 +2,7 @@
 #define IVF_HNSW_LIB_UTILS_H
 
 #include <queue>
+#include <assert.h>
 #include <limits>
 #include <cmath>
 #include <chrono>
