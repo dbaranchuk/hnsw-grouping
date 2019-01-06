@@ -43,11 +43,11 @@ static float test_approx(float *massQ, size_t nq,  HierarchicalNSW *quantizer, s
 static void test_vs_recall(float *massQ, size_t nq,  HierarchicalNSW *quantizer,
                            size_t d, std::vector<std::priority_queue< std::pair<float,  idx_t>>> &answers, size_t k)
 {
-    std::vector<size_t> efs;// = {k}; //= {30, 100, 460};
+    std::vector<size_t> efs;// = {k};
     if (k < 10) {
         for (int i = k; i < 10; i++) efs.push_back(i);
-        for (int i = 10; i < 100; i += 10) efs.push_back(i);
-        for (int i = 100; i <= 500; i += 40) efs.push_back(i);
+      	for (int i = 10; i < 100; i += 10) efs.push_back(i);
+	for (int i = 100; i <= 500; i += 40) efs.push_back(i);
     } else if (k < 100) {
         for (int i = k; i < 100; i += 10) efs.push_back(i);
         for (int i = 100; i <= 500; i += 40) efs.push_back(i);
@@ -57,12 +57,13 @@ static void test_vs_recall(float *massQ, size_t nq,  HierarchicalNSW *quantizer,
     for (size_t ef : efs) {
         quantizer->efSearch = ef;
         quantizer->dist_calc = 0;
-        quantizer->hops = 0.0;
+        quantizer->hops = 0;
         StopW stopw =  StopW();
         float recall = test_approx(massQ, nq, quantizer, d, answers, k);
         float time_us_per_query = stopw.getElapsedTimeMicro() / nq;
-        float avr_dist_count = quantizer->dist_calc*1.f / nq;
-        std::cout << ef << "\t" << recall << "\t" << time_us_per_query << " us\t" << avr_dist_count << " dcs\t" << quantizer->hops << " hps\n";
+        float avg_dists = quantizer->dist_calc*1.f / nq;
+	float avg_hops = quantizer->hops *1.f / nq;
+        std::cout << ef << "\t" << recall << "\t" << time_us_per_query << " us\t" << avg_dists << " dcs\t" << avg_hops << " hps\n";
     }
 }
 
@@ -93,47 +94,15 @@ int main(int argc, char **argv)
         readXvec<float>(query_input, massQ.data(), opt.d, opt.nq);
     }
 
-    //============
-    // Build HNSW
-    //============
+    //===========
+    // Build NSG
+    //===========
     HierarchicalNSW *quantizer;
-    if ( exists(opt.path_info) &&  exists(opt.path_edges)) {
-        quantizer = new  HierarchicalNSW(opt.path_info, opt.path_base, opt.path_edges);
+    if (exists(opt.path_edges)) {
+        quantizer = new HierarchicalNSW(opt.nb, opt.d, opt.path_base, opt.path_edges);
         quantizer->efSearch = opt.efConstruction;
-    } else {
-        quantizer = new  HierarchicalNSW(opt.d, opt.nb, opt.M, 2 * opt.M, opt.efConstruction);
-
-        std::cout << "Constructing quantizer\n";
-        std::ifstream input(opt.path_base, std::ios::binary);
-
-        size_t report_every = 100000;
-        //for (size_t i = 0; i < opt.nb; i++) {
-        //    float mass[opt.d];
-        //    readXvec<float>(input, mass, opt.d);
-        //    if (i % report_every == 0)
-        //        std::cout << i / (0.01 * opt.nb) << " %\n";
-        //    quantizer->addPoint(mass);
-        //}
-
-        int j1 = 0;
-        float mass[opt.d];
-        readXvec<float>(input, mass, opt.d);
-        quantizer->addPoint(mass);
-#pragma omp parallel for
-        for (int i = 1; i < opt.nb; i++) {
-            float mass[opt.d];
-#pragma omp critical
-            {
-                readXvec<float>(input, mass, opt.d);
-                if (++j1 % report_every == 0)
-                    std::cout << j1 / (0.01 * opt.nb) << " %\n";
-            }
-            quantizer->addPoint(mass);
-        }
-
-        quantizer->SaveInfo(opt.path_info);
-        quantizer->SaveEdges(opt.path_edges);
     }
+	quantizer->limit = opt.limit;
 
     //===================
     // Parse groundtruth

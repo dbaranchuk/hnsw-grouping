@@ -4,15 +4,17 @@
 #include <random>
 #include <iostream>
 #include <fstream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <unordered_map>
 #include <unordered_set>
 #include <map>
 #include <cmath>
+#include <ctime>
 #include <queue>
 #include "utils.h"
+#include <vector>
 
 template<typename T>
 static void writeBinaryPOD(std::ostream &out, const T &podRef) {
@@ -27,15 +29,30 @@ static void readBinaryPOD(std::istream &in, T &podRef) {
 namespace hnswlib {
     typedef uint32_t idx_t;
 
+    struct Vertex{
+        idx_t vertex_id;
+        std::vector<idx_t> prev_vertex_ids;
+
+        bool is_visited = false;
+        size_t min_path_length = 0;
+
+        void print(){
+            std::cout << "Vertex " << vertex_id;
+            std::cout << " | Path length: " << min_path_length;
+            std::cout << " | In edges: " << prev_vertex_ids.size() << std::endl;
+        }
+    };
+
     struct HierarchicalNSW
     {
         size_t maxelements_;
-        size_t cur_element_count;
+        idx_t cur_element_count;
         size_t efConstruction_;
 
         VisitedListPool *visitedlistpool;
-        idx_t enterpoint_node;
+        int32_t enterpoint_node;
 
+	size_t limit;
         size_t dist_calc;
         size_t hops;
 
@@ -48,11 +65,16 @@ namespace hnswlib {
 
         size_t M_;
         size_t maxM_;
+        size_t max_level;
         size_t size_links_level0;
         size_t efSearch;
 
-        std::mutex cur_element_count_guard;
-        std::mutex global;
+        char **linkLists;
+        size_t size_links_per_element;
+        std::vector<uint8_t> elementLevels;
+
+        float mult;
+        std::default_random_engine generator;
 
     public:
         HierarchicalNSW(const std::string &infoLocation, const std::string &dataLocation, const std::string &edgeLocation);
@@ -63,18 +85,27 @@ namespace hnswlib {
             return (float *) (data_level0_memory_ + internal_id * size_data_per_element + offset_data);
         }
 
-        inline uint8_t *get_linklist(idx_t internal_id) const {
-            return (uint8_t *) (data_level0_memory_ + internal_id * size_data_per_element);
+        inline uint16_t *get_linklist(idx_t internal_id) const {
+            return (uint16_t *) (data_level0_memory_ + internal_id * size_data_per_element);
         }
 
-        std::priority_queue<std::pair<float, idx_t>> searchBaseLayer(const float *x, size_t ef);
+        inline uint16_t *get_linklist_level(idx_t cur_c, size_t level) const
+        {
+            assert(level > 0);
+            return (uint16_t *)(linkLists[cur_c] + (level - 1) * size_links_per_element);
+        };
+
+        std::priority_queue<std::pair<float, idx_t>> searchBaseLayer(const float *x, size_t ef, size_t level = 0);
 
         void getNeighborsByHeuristic(std::priority_queue<std::pair<float, idx_t>> &topResults, size_t NN);
 
-        void mutuallyConnectNewElement(const float *x, idx_t id, std::priority_queue<std::pair<float, idx_t>> topResults);
+        void mutuallyConnectNewElement(const float *x, idx_t id,
+                std::priority_queue<std::pair<float, idx_t>> topResults, size_t level = 0);
 
+        void setElementLevels(bool one_layer=true);
         void addPoint(const float *point);
 
+        idx_t get_enterpoint(const float *query);
         std::priority_queue<std::pair<float, idx_t >> searchKnn(const float *query_data, size_t k);
 
         void SaveInfo(const std::string &location);
@@ -83,5 +114,13 @@ namespace hnswlib {
         void LoadInfo(const std::string &location);
         void LoadData(const std::string &location);
         void LoadEdges(const std::string &location);
+
+        // NSG
+        HierarchicalNSW(size_t maxelements, size_t d,
+                        const std::string &dataLocation, const std::string &edgeLocation);
+        void LoadNSG(const std::string &dataLocation, const std::string &edgeLocation);
+
+        // BFS
+        std::vector<idx_t> bfs(idx_t initial_vertex_id, idx_t gt, size_t margin=0);
     };
 }

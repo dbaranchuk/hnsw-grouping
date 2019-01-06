@@ -12,6 +12,12 @@ struct Parser
     const char *cmd;        ///< main command - argv[0]
 
     //=================
+    // Limit parameter
+    //=================
+	
+    size_t limit;
+
+    //=================
     // HNSW parameters
     //=================
     size_t M;               ///< Min number of edges per point
@@ -68,6 +74,7 @@ struct Parser
             //=================
             if (!strcmp (a, "-M")) sscanf(argv[++i], "%zu", &M);
             else if (!strcmp (a, "-efConstruction")) sscanf(argv[++i], "%zu", &efConstruction);
+	    else if (!strcmp (a, "-limit")) sscanf(argv[++i], "%zu", &limit);
 
             //=================
             // Data parameters
