@@ -556,6 +556,10 @@ namespace hnswlib {
             auto *data = (idx_t *) (ll_cur + 1);
             for (size_t i = 0; i < size; i++) {
                 idx_t next_vertex_id = *(data + i);
+                if (next_vertex_id != gt &&
+                    (vertex->min_path_length + 1) == min_path_length + margin)
+                    continue;
+
                 Vertex *next_vertex = forward_vertices.data() + next_vertex_id;
                 next_vertex->prev_vertex_ids.push_back(vertex->vertex_id);
 
@@ -569,7 +573,6 @@ namespace hnswlib {
                 forward_counter++;
             }
         }
-//        std::cout << "Min path length: " << min_path_length << std::endl;
 
         // Backward pass
         current_depth = 0;
@@ -595,6 +598,10 @@ namespace hnswlib {
                 break;
 
             for (idx_t prev_vertex_id : forward_vertices[vertex->vertex_id].prev_vertex_ids) {
+                if (prev_vertex_id != initial_vertex_id &&
+                    (vertex->min_path_length + 1) == min_path_length + margin)
+                    continue;
+
                 Vertex *backward_vertex = backward_vertices.data() + prev_vertex_id;
                 if (backward_vertex->is_visited)
                     continue;
@@ -614,7 +621,7 @@ namespace hnswlib {
             results.push_back(vertex.vertex_id);
             results.push_back((idx_t)vertex.min_path_length);
         }
-//        std::cout << forward_counter << " " << backward_counter << std::endl; //" Time: " <<
+        std::cout << forward_counter << " " << backward_counter << std::endl; //" Time: " <<
 //                     stopw.getElapsedTimeMicro() * 1e-6 << std::endl;
         return results;
     }
