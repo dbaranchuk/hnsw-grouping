@@ -20,7 +20,8 @@ static void test_approx(float *massQ, size_t nq,
     std::cout << "TIme(s): " << stopw.getElapsedTimeMicro() * 1e-6 / nq << std::endl;
 
     {
-        std::ofstream out("dist_cache_margin2.bin", std::ios::binary);
+        std::string filename = std::string("sift100k_") + std::to_string(nq) + std::string("q_path_cache_margin2.bin");
+        std::ofstream out(filename, std::ios::binary);
 
         for (size_t i = 0; i < nq; i++) {
             out.write((char *) (enterpoints.data() + i), sizeof(idx_t));
@@ -32,7 +33,8 @@ static void test_approx(float *massQ, size_t nq,
         }
     }
     {
-        std::ofstream out("enterpoints.dat", std::ios::binary);
+        std::string filename = std::string("sift100k_") + std::to_string(nq) + std::string("q_enterpoints.dat");
+        std::ofstream out(filename, std::ios::binary);
         out.write((char *) &nq, sizeof(uint32_t));
         out.write((char *) enterpoints.data(), nq*sizeof(idx_t));
     }
