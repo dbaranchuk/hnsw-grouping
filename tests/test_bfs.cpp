@@ -10,21 +10,25 @@ static void test_approx(float *massQ, size_t nq,
 {
     StopW stopw =  StopW();
     std::vector<std::vector<idx_t>> results(nq);
+    std::vector<idx_t> enterpoints(nq);
 
     #pragma omp parallel for
     for (int i = 0; i < nq; i++) {
-        idx_t enterpoint = quantizer->get_enterpoint(massQ + d*i);
-        results[i] = quantizer->bfs(enterpoint, answers[i], 2);
+        enterpoints[i] = quantizer->get_enterpoint(massQ + d*i);
+        results[i] = quantizer->bfs(enterpoints[i], answers[i], 2);
     }
     std::cout << "TIme(s): " << stopw.getElapsedTimeMicro() * 1e-6 / nq << std::endl;
 
 
     std::ofstream out("dist_cache_margin2.ivecs", std::ios::binary);
 
-    for (auto result : results){
-        uint32_t dim = result.size();
+    for (size_t i =0; i < nq; i++){
+        out.write((char *) (enterpoints.data()+i), sizeof(idx_t));
+        out.write((char *) (answers.data()+i), sizeof(idx_t));
+
+        uint32_t dim = results[i].size();
         out.write((char *) &dim, sizeof(uint32_t));
-        out.write((char *) result.data(), dim * sizeof(uint32_t));
+        out.write((char *) results[i].data(), dim * sizeof(uint32_t));
     }
 }
 
