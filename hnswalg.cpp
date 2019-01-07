@@ -615,12 +615,16 @@ namespace hnswlib {
         }
 
         std::vector<idx_t> results;
-        for (auto vertex : backward_vertices){
-            if (!vertex.is_visited)
+        for (size_t i=0; i < maxelements_; i++){
+            if (!backward_vertices[i].is_visited || !forward_vertices[i].is_visited)
                 continue;
-            results.push_back(vertex.vertex_id);
-            results.push_back((idx_t)vertex.min_path_length);
+
+            if (backward_vertices[i].min_path_length + forward_vertices[i].min_path_length > min_path_length + margin)
+                continue;
+            results.push_back(backward_vertices[i].vertex_id);
+            results.push_back((idx_t)backward_vertices[i].min_path_length);
         }
+//        std::cout << results.size() << std::endl;
 //        std::cout << forward_counter << " " << backward_counter << std::endl; //" Time: " <<
 //                     stopw.getElapsedTimeMicro() * 1e-6 << std::endl;
         return results;
