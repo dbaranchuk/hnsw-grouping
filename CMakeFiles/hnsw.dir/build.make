@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.6.3/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping
+CMAKE_SOURCE_DIR = /Users/dmitrybaranchuk/CV/yandex/hnsw
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping
+CMAKE_BINARY_DIR = /Users/dmitrybaranchuk/CV/yandex/hnsw
 
 # Include any dependencies generated for this target.
 include CMakeFiles/hnsw.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/hnsw.dir/flags.make
 
 CMakeFiles/hnsw.dir/hnswalg.cpp.o: CMakeFiles/hnsw.dir/flags.make
 CMakeFiles/hnsw.dir/hnswalg.cpp.o: hnswalg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hnsw.dir/hnswalg.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hnsw.dir/hnswalg.cpp.o -c /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/hnswalg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dmitrybaranchuk/CV/yandex/hnsw/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hnsw.dir/hnswalg.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hnsw.dir/hnswalg.cpp.o -c /Users/dmitrybaranchuk/CV/yandex/hnsw/hnswalg.cpp
 
 CMakeFiles/hnsw.dir/hnswalg.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hnsw.dir/hnswalg.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/hnswalg.cpp > CMakeFiles/hnsw.dir/hnswalg.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dmitrybaranchuk/CV/yandex/hnsw/hnswalg.cpp > CMakeFiles/hnsw.dir/hnswalg.cpp.i
 
 CMakeFiles/hnsw.dir/hnswalg.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hnsw.dir/hnswalg.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/hnswalg.cpp -o CMakeFiles/hnsw.dir/hnswalg.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dmitrybaranchuk/CV/yandex/hnsw/hnswalg.cpp -o CMakeFiles/hnsw.dir/hnswalg.cpp.s
 
 CMakeFiles/hnsw.dir/hnswalg.cpp.o.requires:
 
@@ -81,42 +81,18 @@ CMakeFiles/hnsw.dir/hnswalg.cpp.o.provides: CMakeFiles/hnsw.dir/hnswalg.cpp.o.re
 CMakeFiles/hnsw.dir/hnswalg.cpp.o.provides.build: CMakeFiles/hnsw.dir/hnswalg.cpp.o
 
 
-CMakeFiles/hnsw.dir/hnswalg_group.cpp.o: CMakeFiles/hnsw.dir/flags.make
-CMakeFiles/hnsw.dir/hnswalg_group.cpp.o: hnswalg_group.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hnsw.dir/hnswalg_group.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hnsw.dir/hnswalg_group.cpp.o -c /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/hnswalg_group.cpp
-
-CMakeFiles/hnsw.dir/hnswalg_group.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hnsw.dir/hnswalg_group.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/hnswalg_group.cpp > CMakeFiles/hnsw.dir/hnswalg_group.cpp.i
-
-CMakeFiles/hnsw.dir/hnswalg_group.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hnsw.dir/hnswalg_group.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/hnswalg_group.cpp -o CMakeFiles/hnsw.dir/hnswalg_group.cpp.s
-
-CMakeFiles/hnsw.dir/hnswalg_group.cpp.o.requires:
-
-.PHONY : CMakeFiles/hnsw.dir/hnswalg_group.cpp.o.requires
-
-CMakeFiles/hnsw.dir/hnswalg_group.cpp.o.provides: CMakeFiles/hnsw.dir/hnswalg_group.cpp.o.requires
-	$(MAKE) -f CMakeFiles/hnsw.dir/build.make CMakeFiles/hnsw.dir/hnswalg_group.cpp.o.provides.build
-.PHONY : CMakeFiles/hnsw.dir/hnswalg_group.cpp.o.provides
-
-CMakeFiles/hnsw.dir/hnswalg_group.cpp.o.provides.build: CMakeFiles/hnsw.dir/hnswalg_group.cpp.o
-
-
 CMakeFiles/hnsw.dir/utils.cpp.o: CMakeFiles/hnsw.dir/flags.make
 CMakeFiles/hnsw.dir/utils.cpp.o: utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/hnsw.dir/utils.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hnsw.dir/utils.cpp.o -c /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dmitrybaranchuk/CV/yandex/hnsw/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hnsw.dir/utils.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hnsw.dir/utils.cpp.o -c /Users/dmitrybaranchuk/CV/yandex/hnsw/utils.cpp
 
 CMakeFiles/hnsw.dir/utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hnsw.dir/utils.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/utils.cpp > CMakeFiles/hnsw.dir/utils.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dmitrybaranchuk/CV/yandex/hnsw/utils.cpp > CMakeFiles/hnsw.dir/utils.cpp.i
 
 CMakeFiles/hnsw.dir/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hnsw.dir/utils.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/utils.cpp -o CMakeFiles/hnsw.dir/utils.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dmitrybaranchuk/CV/yandex/hnsw/utils.cpp -o CMakeFiles/hnsw.dir/utils.cpp.s
 
 CMakeFiles/hnsw.dir/utils.cpp.o.requires:
 
@@ -132,18 +108,16 @@ CMakeFiles/hnsw.dir/utils.cpp.o.provides.build: CMakeFiles/hnsw.dir/utils.cpp.o
 # Object files for target hnsw
 hnsw_OBJECTS = \
 "CMakeFiles/hnsw.dir/hnswalg.cpp.o" \
-"CMakeFiles/hnsw.dir/hnswalg_group.cpp.o" \
 "CMakeFiles/hnsw.dir/utils.cpp.o"
 
 # External object files for target hnsw
 hnsw_EXTERNAL_OBJECTS =
 
 lib/libhnsw.a: CMakeFiles/hnsw.dir/hnswalg.cpp.o
-lib/libhnsw.a: CMakeFiles/hnsw.dir/hnswalg_group.cpp.o
 lib/libhnsw.a: CMakeFiles/hnsw.dir/utils.cpp.o
 lib/libhnsw.a: CMakeFiles/hnsw.dir/build.make
 lib/libhnsw.a: CMakeFiles/hnsw.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library lib/libhnsw.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dmitrybaranchuk/CV/yandex/hnsw/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library lib/libhnsw.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/hnsw.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hnsw.dir/link.txt --verbose=$(VERBOSE)
 
@@ -153,7 +127,6 @@ CMakeFiles/hnsw.dir/build: lib/libhnsw.a
 .PHONY : CMakeFiles/hnsw.dir/build
 
 CMakeFiles/hnsw.dir/requires: CMakeFiles/hnsw.dir/hnswalg.cpp.o.requires
-CMakeFiles/hnsw.dir/requires: CMakeFiles/hnsw.dir/hnswalg_group.cpp.o.requires
 CMakeFiles/hnsw.dir/requires: CMakeFiles/hnsw.dir/utils.cpp.o.requires
 
 .PHONY : CMakeFiles/hnsw.dir/requires
@@ -163,6 +136,6 @@ CMakeFiles/hnsw.dir/clean:
 .PHONY : CMakeFiles/hnsw.dir/clean
 
 CMakeFiles/hnsw.dir/depend:
-	cd /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping /Users/dmitrybaranchuk/CV/yandex/hnsw-grouping/CMakeFiles/hnsw.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/dmitrybaranchuk/CV/yandex/hnsw && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/dmitrybaranchuk/CV/yandex/hnsw /Users/dmitrybaranchuk/CV/yandex/hnsw /Users/dmitrybaranchuk/CV/yandex/hnsw /Users/dmitrybaranchuk/CV/yandex/hnsw /Users/dmitrybaranchuk/CV/yandex/hnsw/CMakeFiles/hnsw.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/hnsw.dir/depend
 

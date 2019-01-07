@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hnsw.dir/hnswalg.cpp.o"
-  "CMakeFiles/hnsw.dir/hnswalg_group.cpp.o"
   "CMakeFiles/hnsw.dir/utils.cpp.o"
   "lib/libhnsw.pdb"
   "lib/libhnsw.a"

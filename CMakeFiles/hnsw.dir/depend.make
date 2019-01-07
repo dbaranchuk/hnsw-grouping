@@ -6,11 +6,6 @@ CMakeFiles/hnsw.dir/hnswalg.cpp.o: hnswalg.h
 CMakeFiles/hnsw.dir/hnswalg.cpp.o: utils.h
 CMakeFiles/hnsw.dir/hnswalg.cpp.o: visited_list_pool.h
 
-CMakeFiles/hnsw.dir/hnswalg_group.cpp.o: hnswalg_group.cpp
-CMakeFiles/hnsw.dir/hnswalg_group.cpp.o: hnswalg_group.h
-CMakeFiles/hnsw.dir/hnswalg_group.cpp.o: utils.h
-CMakeFiles/hnsw.dir/hnswalg_group.cpp.o: visited_list_pool.h
-
 CMakeFiles/hnsw.dir/utils.cpp.o: utils.cpp
 CMakeFiles/hnsw.dir/utils.cpp.o: utils.h
 
