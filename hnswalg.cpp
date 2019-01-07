@@ -623,7 +623,7 @@ namespace hnswlib {
             results.push_back(backward_vertices[i].vertex_id);
             results.push_back((idx_t)backward_vertices[i].min_path_length);
         }
-        std::cout << results.size() << std::endl;
+//        std::cout << results.size() << std::endl;
 //        std::cout << forward_counter << " " << backward_counter << std::endl; //" Time: " <<
 //                     stopw.getElapsedTimeMicro() * 1e-6 << std::endl;
         return results;

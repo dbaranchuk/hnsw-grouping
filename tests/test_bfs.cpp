@@ -20,7 +20,7 @@ static void test_approx(float *massQ, size_t nq,
     std::cout << "TIme(s): " << stopw.getElapsedTimeMicro() * 1e-6 / nq << std::endl;
 
 
-    std::ofstream out("dist_cache_margin2.ivecs", std::ios::binary);
+    std::ofstream out("dist_cache_margin2.bin", std::ios::binary);
 
     for (size_t i =0; i < nq; i++){
         out.write((char *) (enterpoints.data()+i), sizeof(idx_t));
