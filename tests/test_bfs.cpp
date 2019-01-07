@@ -19,16 +19,22 @@ static void test_approx(float *massQ, size_t nq,
     }
     std::cout << "TIme(s): " << stopw.getElapsedTimeMicro() * 1e-6 / nq << std::endl;
 
+    {
+        std::ofstream out("dist_cache_margin2.bin", std::ios::binary);
 
-    std::ofstream out("dist_cache_margin2.bin", std::ios::binary);
+        for (size_t i = 0; i < nq; i++) {
+            out.write((char *) (enterpoints.data() + i), sizeof(idx_t));
+            out.write((char *) (answers.data() + i), sizeof(idx_t));
 
-    for (size_t i =0; i < nq; i++){
-        out.write((char *) (enterpoints.data()+i), sizeof(idx_t));
-        out.write((char *) (answers.data()+i), sizeof(idx_t));
-
-        uint32_t dim = results[i].size();
-        out.write((char *) &dim, sizeof(uint32_t));
-        out.write((char *) results[i].data(), dim * sizeof(uint32_t));
+            uint32_t dim = results[i].size();
+            out.write((char *) &dim, sizeof(uint32_t));
+            out.write((char *) results[i].data(), dim * sizeof(uint32_t));
+        }
+    }
+    {
+        std::ofstream out("enterpoints.dat", std::ios::binary);
+        out.write((char *) &nq, sizeof(uint32_t));
+        out.write((char *) enterpoints.data(), nq*sizeof(idx_t));
     }
 }
 

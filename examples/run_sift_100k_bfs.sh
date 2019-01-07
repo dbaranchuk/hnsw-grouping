@@ -16,7 +16,7 @@ efConstruction="300"  # Max number of candidate vertices in priority queue to ob
 nb="100000"          # Number of base vectors
 nt="100000"           # Number of learn vectors
 
-nq="10"            # Number of queries
+nq="89983"            # Number of queries
 ngt="1"             # Number of groundtruth neighbours per query
 
 d="128"               # Vector dimension
@@ -45,7 +45,7 @@ path_info="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}_levels.bin"
 #######
 # Run #
 #######
-OMP_NUM_THREADS=12 ${PWD}/bin/test_bfs -M ${M} \
+ ${PWD}/bin/test_bfs -M ${M} \
                      -efConstruction ${efConstruction} \
                      -nb ${nb} \
                      -nt ${nt} \
