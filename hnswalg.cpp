@@ -613,7 +613,7 @@ namespace hnswlib {
                 backward_counter++;
             }
         }
-        std::cout << min_path_length << std::endl;
+        std::cout << min_path_length <<  " " << forward_counter <<  " " << backward_counter << std::endl;
         std::vector<idx_t> results;
         for (size_t i=0; i < maxelements_; i++){
             if (!backward_vertices[i].is_visited || !forward_vertices[i].is_visited)
