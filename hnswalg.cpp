@@ -620,7 +620,6 @@ namespace hnswlib {
         for (size_t i=0; i < maxelements_; i++){
             if (!backward_vertices[i].is_visited || !forward_vertices[i].is_visited)
                 continue;
-            backward_vertices[i].print();
             if (backward_vertices[i].min_path_length + forward_vertices[i].min_path_length > min_path_length + margin)
                 continue;
             results.push_back(backward_vertices[i].vertex_id);

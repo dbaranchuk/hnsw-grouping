@@ -14,12 +14,9 @@ static void test_approx(float *massQ, size_t nq,
 
     #pragma omp parallel for
     for (int i = 0; i < nq; i++) {
-        enterpoints[i] = 0; //quantizer->get_enterpoint(massQ + d*i);
+        enterpoints[i] = quantizer->get_enterpoint(massQ + d*i);
         results[i] = quantizer->bfs(enterpoints[i], answers[i], 2);
-
-        std::cout << enterpoints[i] <<  " " << answers[i] << std::endl;
-        for (idx_t res : results[i])
-            std::cout << res << " ";
+        std::cout << enterpoints[i];
     }
 
     std::cout << "TIme(s): " << stopw.getElapsedTimeMicro() * 1e-6 / nq << std::endl;
