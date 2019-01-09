@@ -39,8 +39,8 @@ path_learn="${path_data}/sift_learn.fvecs"
 path_gt="${path_data}/train_gt.ivecs" #sift_groundtruth.ivecs"
 path_q="${path_data}/sift_learn_filtered.fvecs"
 
-path_edges="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}_levels.ivecs"
-path_info="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}_levels.bin"
+path_edges="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}.ivecs" #levels
+path_info="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}.bin" #levels
 
 #######
 # Run #

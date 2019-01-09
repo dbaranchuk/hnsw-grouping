@@ -12,14 +12,9 @@ static void test_approx(float *massQ, size_t nq,
     std::vector<std::vector<idx_t>> results(nq);
     std::vector<idx_t> enterpoints(nq);
 
-    //#pragma omp parallel for
+    #pragma omp parallel for
     for (int i = 0; i < nq; i++) {
-        if (answers[i] != 554062 && answers[i] != 249474)
-            continue;
-        enterpoints[i] = quantizer->get_enterpoint(massQ + d*i);
-        if (enterpoints[i] != 524586 && enterpoints[i] != 467546)
-            continue;
-
+        enterpoints[i] = 0; //quantizer->get_enterpoint(massQ + d*i);
         results[i] = quantizer->bfs(enterpoints[i], answers[i], 2);
 
         std::cout << enterpoints[i] <<  " " << answers[i] << std::endl;
