@@ -8,6 +8,7 @@ limit="0"
 
 M="8"                # Min number of edges per point
 efConstruction="300"  # Max number of candidate vertices in priority queue to observe during construction
+onelayer="0"
 
 ###################
 # Data parameters #
@@ -60,4 +61,5 @@ path_info="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}.bin" #levels
                      -path_q ${path_q} \
                      -path_edges ${path_edges} \
                      -path_info ${path_info} \
-		     -limit ${limit}
+		             -limit ${limit} \
+		             -onelayer ${onelayer}

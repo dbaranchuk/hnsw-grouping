@@ -22,6 +22,7 @@ struct Parser
     //=================
     size_t M;               ///< Min number of edges per point
     size_t efConstruction;  ///< Max number of candidate vertices in priority queue to observe during construction
+    bool is_one_layer;
 
     //=================
     // Data parameters
@@ -74,7 +75,12 @@ struct Parser
             //=================
             if (!strcmp (a, "-M")) sscanf(argv[++i], "%zu", &M);
             else if (!strcmp (a, "-efConstruction")) sscanf(argv[++i], "%zu", &efConstruction);
-	    else if (!strcmp (a, "-limit")) sscanf(argv[++i], "%zu", &limit);
+            else if (!strcmp (a, "-limit")) sscanf(argv[++i], "%zu", &limit);
+            else if (!strcmp (a, "-onelayer")){
+                int tmp;
+                sscanf(argv[++i], "%d", &tmp);
+                is_one_layer = (bool) tmp;
+            }
 
             //=================
             // Data parameters

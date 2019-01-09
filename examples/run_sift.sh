@@ -8,6 +8,7 @@ limit="0"
 
 M="12"                # Min number of edges per point
 efConstruction="300"  # Max number of candidate vertices in priority queue to observe during construction
+onelayer="0"
 
 ###################
 # Data parameters #
@@ -63,4 +64,5 @@ ${PWD}/bin/test_hnsw -M ${M} \
                      -path_q ${path_q} \
                      -path_edges ${path_edges} \
                      -path_info ${path_info} \
-		     -limit ${limit}
+		             -limit ${limit} \
+		             -onelayer ${onelayer}

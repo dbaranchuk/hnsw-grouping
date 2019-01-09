@@ -10,7 +10,8 @@ namespace hnswlib {
         LoadEdges(edgeLocation);
     }
 
-    HierarchicalNSW::HierarchicalNSW(size_t d, size_t maxelements, size_t M, size_t maxM, size_t efConstruction) {
+    HierarchicalNSW::HierarchicalNSW(size_t d, size_t maxelements, size_t M,
+                                     size_t maxM, size_t efConstruction, bool is_one_layer) {
         d_ = d;
         data_size = d * sizeof(float);
 
@@ -40,7 +41,7 @@ namespace hnswlib {
         cur_element_count = 0;
 
         generator = std::default_random_engine(100);
-        setElementLevels(true);
+        setElementLevels(is_one_layer);
     }
 
     HierarchicalNSW::~HierarchicalNSW() {
@@ -310,6 +311,7 @@ namespace hnswlib {
 
 
     idx_t HierarchicalNSW::get_enterpoint(const float *query) {
+        assert(enterpoint_node >= 0);
         idx_t currObj = enterpoint_node;
         float curdist = fvec_L2sqr(query, getDataByInternalId(currObj), d_);
         dist_calc += (int) (max_level > 0);

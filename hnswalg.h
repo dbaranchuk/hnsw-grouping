@@ -78,7 +78,8 @@ namespace hnswlib {
 
     public:
         HierarchicalNSW(const std::string &infoLocation, const std::string &dataLocation, const std::string &edgeLocation);
-        HierarchicalNSW(size_t d, size_t maxelements, size_t M, size_t maxM, size_t efConstruction = 500);
+        HierarchicalNSW(size_t d, size_t maxelements, size_t M, size_t maxM,
+                        size_t efConstruction = 500, bool is_one_layer=false);
         ~HierarchicalNSW();
 
         inline float *getDataByInternalId(idx_t internal_id) const {
