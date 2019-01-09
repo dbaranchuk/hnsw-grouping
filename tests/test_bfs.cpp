@@ -16,7 +16,6 @@ static void test_approx(float *massQ, size_t nq,
     for (int i = 0; i < nq; i++) {
         enterpoints[i] = quantizer->get_enterpoint(massQ + d*i);
         results[i] = quantizer->bfs(enterpoints[i], answers[i], 2);
-        std::cout << enterpoints[i];
     }
 
     std::cout << "TIme(s): " << stopw.getElapsedTimeMicro() * 1e-6 / nq << std::endl;
