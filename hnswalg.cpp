@@ -40,7 +40,7 @@ namespace hnswlib {
         cur_element_count = 0;
 
         generator = std::default_random_engine(100);
-        setElementLevels(false);
+        setElementLevels(true);
     }
 
     HierarchicalNSW::~HierarchicalNSW() {
