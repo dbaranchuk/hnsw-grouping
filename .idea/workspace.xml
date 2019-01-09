@@ -14,40 +14,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea23355-286c-4603-b8c0-8146464b8097" name="Default Changelist" comment="update">
+    <list default="true" id="eea23355-286c-4603-b8c0-8146464b8097" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Progress/count.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/hnsw.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hnswalg.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/hnswalg.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/test_group_sift.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/test_sift.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/test_sift.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/test_sift.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/test_sift.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/test_sift.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/test_sift.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeFiles/test_sift.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeFiles/test_sift.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_bfs.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_bfs.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -160,32 +129,32 @@
         <counts>
           <entry key="Makefile" value="1" />
           <entry key="cbp" value="3" />
-          <entry key="cpp" value="6" />
-          <entry key="h" value="4" />
-          <entry key="sh" value="5" />
+          <entry key="cpp" value="8" />
+          <entry key="h" value="5" />
+          <entry key="sh" value="12" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CMakeLists.txt" value="3" />
-          <entry key="ObjectiveC" value="10" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="ObjectiveC" value="13" />
+          <entry key="PLAIN_TEXT" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="8992" />
-          <entry key="h" value="953" />
-          <entry key="sh" value="99" />
+          <entry key="cpp" value="9735" />
+          <entry key="h" value="1055" />
+          <entry key="sh" value="241" />
           <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="1" />
-          <entry key="ObjectiveC" value="9945" />
-          <entry key="PLAIN_TEXT" value="105" />
+          <entry key="ObjectiveC" value="10790" />
+          <entry key="PLAIN_TEXT" value="247" />
         </counts>
       </usages-collector>
     </session>
@@ -193,13 +162,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hnswalg.h">
+        <entry file="file://$PROJECT_DIR$/examples/run_sift_100k_bfs.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-              <folding>
-                <element signature="e#14#44#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="853">
+              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -207,29 +173,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hnswalg.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="615" lean-forward="true" selection-start-line="615" selection-end-line="615" />
+            <state relative-caret-position="604">
+              <caret line="616" column="9" selection-start-line="616" selection-start-column="9" selection-end-line="616" selection-end-column="9" />
               <folding>
-                <marker date="1546860661488" expanded="true" signature="23293:23424" ph="..." />
+                <marker date="1547051413091" expanded="true" signature="23394:23525" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/run_sift_100k_bfs.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
-              <caret line="47" selection-start-line="47" selection-end-line="47" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/run_sift_bfs.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -237,20 +185,40 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/run_sift_100k.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+            <state relative-caret-position="868">
+              <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_hnsw.cpp">
+        <entry file="file://$PROJECT_DIR$/examples/run_sift.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="99" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="868">
+              <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/run_nsg.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="868">
+              <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/run_mnist.sh">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/run_deep.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -258,41 +226,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_bfs.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="240">
+              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils.h">
+        <entry file="file://$PROJECT_DIR$/examples/run_sift_bfs.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="103" column="66" selection-start-line="102" selection-start-column="12" selection-end-line="103" selection-end-column="66" />
-              <folding>
-                <element signature="e#59#75#0" expanded="true" />
-                <element signature="e#2092#2104#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="868">
+              <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="63" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/examples/run_sift_centroids.sh">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -321,22 +272,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Parser.h" />
         <option value="$PROJECT_DIR$/hnswalg_group.h" />
         <option value="$PROJECT_DIR$/examples/run_sift_centroids.sh" />
         <option value="$PROJECT_DIR$/tests/test_group_sift.cpp" />
         <option value="$PROJECT_DIR$/examples/run_group_sift.sh" />
         <option value="$PROJECT_DIR$/hnswalg_group.cpp" />
-        <option value="$PROJECT_DIR$/examples/run_sift.sh" />
         <option value="$PROJECT_DIR$/tests/test_sift.cpp" />
-        <option value="$PROJECT_DIR$/examples/run_nsg.sh" />
         <option value="$PROJECT_DIR$/tests/test_nsg.cpp" />
         <option value="$PROJECT_DIR$/tests/test_hnsw.cpp" />
-        <option value="$PROJECT_DIR$/hnswalg.h" />
         <option value="$PROJECT_DIR$/utils.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/hnswalg.h" />
+        <option value="$PROJECT_DIR$/Parser.h" />
         <option value="$PROJECT_DIR$/examples/run_sift_100k_bfs.sh" />
         <option value="$PROJECT_DIR$/examples/run_sift_bfs.sh" />
+        <option value="$PROJECT_DIR$/examples/run_sift_100k.sh" />
+        <option value="$PROJECT_DIR$/examples/run_sift.sh" />
+        <option value="$PROJECT_DIR$/examples/run_nsg.sh" />
+        <option value="$PROJECT_DIR$/examples/run_deep.sh" />
         <option value="$PROJECT_DIR$/tests/test_bfs.cpp" />
         <option value="$PROJECT_DIR$/hnswalg.cpp" />
       </list>
@@ -464,7 +417,7 @@
       <workItem from="1544960331150" duration="8761000" />
       <workItem from="1545748774991" duration="1556000" />
       <workItem from="1546001864001" duration="235000" />
-      <workItem from="1546471674421" duration="41490000" />
+      <workItem from="1546471674421" duration="50221000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1546800137026</created>
@@ -571,11 +524,109 @@
       <option name="project" value="LOCAL" />
       <updated>1546860035199</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update">
+      <created>1546860674949</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1546860674949</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update">
+      <created>1546860678133</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1546860678133</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update">
+      <created>1546863968160</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1546863968160</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update">
+      <created>1546886449069</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1546886449069</updated>
+    </task>
+    <task id="LOCAL-00020" summary="update">
+      <created>1546961115602</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1546961115602</updated>
+    </task>
+    <task id="LOCAL-00021" summary="update">
+      <created>1546961398615</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1546961398615</updated>
+    </task>
+    <task id="LOCAL-00022" summary="update">
+      <created>1546961625467</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1546961625467</updated>
+    </task>
+    <task id="LOCAL-00023" summary="update">
+      <created>1546961700129</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1546961700129</updated>
+    </task>
+    <task id="LOCAL-00024" summary="update">
+      <created>1547029200636</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1547029200636</updated>
+    </task>
+    <task id="LOCAL-00025" summary="update">
+      <created>1547040840945</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1547040840945</updated>
+    </task>
+    <task id="LOCAL-00026" summary="update">
+      <created>1547041709588</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1547041709588</updated>
+    </task>
+    <task id="LOCAL-00027" summary="update">
+      <created>1547041736510</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1547041736510</updated>
+    </task>
+    <task id="LOCAL-00028" summary="update">
+      <created>1547050130598</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1547050130598</updated>
+    </task>
+    <task id="LOCAL-00029" summary="update">
+      <created>1547051341408</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1547051341408</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133707000" />
+    <option name="totallyTimeSpent" value="142438000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-309" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -618,24 +669,13 @@
     <entry file="file://$PROJECT_DIR$/visited_list_pool.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/run_sift_centroids.sh" />
     <entry file="file://$PROJECT_DIR$/tests/test_group_sift.cpp" />
     <entry file="file://$PROJECT_DIR$/examples/run_group_sift.sh" />
     <entry file="file://$PROJECT_DIR$/tests/test_sift.cpp" />
     <entry file="file://$PROJECT_DIR$/graphic.py" />
     <entry file="file://$PROJECT_DIR$/hnswalg_group.h" />
     <entry file="file://$PROJECT_DIR$/hnswalg_group.cpp" />
-    <entry file="file://$PROJECT_DIR$/examples/run_sift.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/run_deep.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
@@ -643,13 +683,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/run_nsg.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_nsg.cpp">
       <provider selected="true" editor-type-id="text-editor">
@@ -663,30 +696,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hnsw.cbp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hnswalg.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding>
-            <element signature="e#14#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/run_sift_100k.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.cpp">
       <provider selected="true" editor-type-id="text-editor">
@@ -723,33 +732,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hnswalg.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="81" column="58" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="58" />
+          <folding>
+            <element signature="e#14#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parser.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-178">
+          <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/run_sift_centroids.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/run_sift_1k.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/run_mnist.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/examples/run_sift_100k_bfs.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="47" selection-start-line="47" selection-end-line="47" selection-end-column="18" />
+        <state relative-caret-position="853">
+          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/run_sift_bfs.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        <state relative-caret-position="868">
+          <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/run_sift_100k.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/run_sift.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/run_nsg.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/run_deep.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_bfs.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        <state relative-caret-position="240">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hnswalg.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="615" lean-forward="true" selection-start-line="615" selection-end-line="615" />
+        <state relative-caret-position="604">
+          <caret line="616" column="9" selection-start-line="616" selection-start-column="9" selection-end-line="616" selection-end-column="9" />
           <folding>
-            <marker date="1546860661488" expanded="true" signature="23293:23424" ph="..." />
+            <marker date="1547051413091" expanded="true" signature="23394:23525" ph="..." />
           </folding>
         </state>
       </provider>
