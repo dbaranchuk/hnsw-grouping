@@ -119,7 +119,7 @@ namespace hnswlib {
                     }
                 }
             }
-            hops++;
+            //hops++;
         }
         dist_calc += query_dist_calc;
         visitedlistpool->releaseVisitedList(vl);
