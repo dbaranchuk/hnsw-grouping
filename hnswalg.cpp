@@ -41,6 +41,7 @@ namespace hnswlib {
         cur_element_count = 0;
 
         generator = std::default_random_engine(100);
+        std::cout << "Is one layer: " << is_one_layer << std::endl;
         setElementLevels(is_one_layer);
     }
 
@@ -72,6 +73,7 @@ namespace hnswlib {
         massVisited[enterpoint_node] = currentV;
         float lowerBound = dist;
 
+        size_t num_hops = 0;
         while (!candidateSet.empty()) {
             std::pair<float, idx_t> curr_el_pair = candidateSet.top();
             if (-curr_el_pair.first > lowerBound)
@@ -120,8 +122,9 @@ namespace hnswlib {
                     }
                 }
             }
-            hops++;
+            num_hops++;
         }
+        hops += num_hops;
         dist_calc += query_dist_calc;
         visitedlistpool->releaseVisitedList(vl);
         return topResults;
@@ -314,7 +317,9 @@ namespace hnswlib {
         assert(enterpoint_node >= 0);
         idx_t currObj = enterpoint_node;
         float curdist = fvec_L2sqr(query, getDataByInternalId(currObj), d_);
-        dist_calc += (int) (max_level > 0);
+        size_t query_dist_calc = 0;
+        size_t query_hops_num = 0;
+        query_dist_calc += (int) (max_level > 0);
 
         for (size_t level = max_level; level > 0; level--) {
             bool changed = true;
@@ -329,10 +334,10 @@ namespace hnswlib {
                         throw std::runtime_error("candidate error");
 
                     float dist = fvec_L2sqr(query, getDataByInternalId(cand), d_);
-                    dist_calc++;
+                    query_dist_calc++;
 
                     if (dist < curdist) {
-                        hops++;
+                        query_hops_num++;
                         curdist = dist;
                         currObj = cand;
                         changed = true;
@@ -340,7 +345,9 @@ namespace hnswlib {
                 }
             }
         }
-        limit -= dist_calc;
+        limit -= query_dist_calc;
+        dist_calc += query_dist_calc;
+        hops += query_hops_num;
         return currObj;
     }
 
@@ -479,11 +486,14 @@ namespace hnswlib {
 
     HierarchicalNSW::HierarchicalNSW(size_t maxelements, size_t d,
                                      const std::string &dataLocation,
-                                     const std::string &edgeLocation) {
+                                     const std::string &edgeLocation, bool is_nsg) {
         maxelements_ = maxelements;
         d_ = d;
         data_size = d_ * sizeof(float);
-        LoadNSG(dataLocation, edgeLocation);
+        if (is_nsg)
+            LoadNSG(dataLocation, edgeLocation);
+        else
+            LoadMRNG(dataLocation, edgeLocation);
     }
 
     void HierarchicalNSW::LoadNSG(const std::string &dataLocation,
@@ -521,6 +531,42 @@ namespace hnswlib {
 
             input.read((char *) data, size * sizeof(idx_t));
 
+        }
+        LoadData(dataLocation);
+    }
+
+    void HierarchicalNSW::LoadMRNG(const std::string &dataLocation,
+                                   const std::string &edgeLocation) {
+        std::cout << "Loading mrng from " << edgeLocation << std::endl;
+        std::ifstream input(edgeLocation, std::ios::binary);
+
+        maxM_ = 288;
+        enterpoint_node = 123742;
+
+        size_links_level0 = maxM_ * sizeof(idx_t) + sizeof(uint16_t);
+        size_data_per_element = size_links_level0 + data_size;
+        offset_data = size_links_level0;
+
+        data_level0_memory_ = (char *) malloc(maxelements_ * size_data_per_element);
+        std::cout << "Size Mb: " << (maxelements_ * size_data_per_element) / (1000 * 1000) << std::endl;
+
+        visitedlistpool = new VisitedListPool(1, maxelements_);
+        efConstruction_ = 0;
+        max_level = 0;
+        cur_element_count = maxelements_;
+        elementLevels = std::vector<uint8_t>(maxelements_);
+
+        int i = 0;
+        while (!input.eof()) {
+            unsigned size;
+            input.read((char *) &size, sizeof(unsigned));
+            if (input.eof()) break;
+
+            uint16_t *ll_cur = get_linklist(i++);
+            *ll_cur = size;
+            auto *data = (idx_t *) (ll_cur + 1);
+
+            input.read((char *) data, size * sizeof(idx_t));
         }
         LoadData(dataLocation);
     }

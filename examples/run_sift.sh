@@ -8,7 +8,7 @@ limit="0"
 
 M="12"                # Min number of edges per point
 efConstruction="300"  # Max number of candidate vertices in priority queue to observe during construction
-onelayer="0"
+onelayer="1"
 
 ###################
 # Data parameters #
@@ -43,8 +43,8 @@ path_q="${path_data}/sift_query.fvecs"
 #path_edges="${path_model}/test_hnsw100k_M16_ef300_RL_efSearch1_batch4k_hid1024_stoh88k.ivecs"
 #path_edges="${path_model}/hnsw100k_M10_ef300_RL_CHreward_alpha10.ivecs"
 #path_edges="${path_model}/sift1m_hnsw_M12_ef300_RL_WR_limit0_ef1.ivecs"
-path_edges="${path_model}/test_hnsw_M${M}_ef${efConstruction}.ivecs" 
-path_info="${path_model}/test_hnsw_M${M}_ef${efConstruction}.bin"
+path_edges="${path_model}/test_hnsw_M${M}_ef${efConstruction}_onelevel${onelayer}.ivecs" 
+path_info="${path_model}/test_hnsw_M${M}_ef${efConstruction}_onelevel${onelayer}.bin"
 
 #######
 # Run #

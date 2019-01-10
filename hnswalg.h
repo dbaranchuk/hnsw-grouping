@@ -76,6 +76,8 @@ namespace hnswlib {
         float mult;
         std::default_random_engine generator;
 
+        size_t tmp_query_dist_calc = 0;
+
     public:
         HierarchicalNSW(const std::string &infoLocation, const std::string &dataLocation, const std::string &edgeLocation);
         HierarchicalNSW(size_t d, size_t maxelements, size_t M, size_t maxM,
@@ -118,8 +120,9 @@ namespace hnswlib {
 
         // NSG
         HierarchicalNSW(size_t maxelements, size_t d,
-                        const std::string &dataLocation, const std::string &edgeLocation);
+                        const std::string &dataLocation, const std::string &edgeLocation, bool is_nsg=true);
         void LoadNSG(const std::string &dataLocation, const std::string &edgeLocation);
+        void LoadMRNG(const std::string &dataLocation, const std::string &edgeLocation);
 
         // BFS
         std::vector<idx_t> bfs(idx_t initial_vertex_id, idx_t gt, size_t margin=0);

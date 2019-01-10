@@ -18,7 +18,7 @@ static void test_approx(float *massQ, size_t nq,
         results[i] = quantizer->bfs(enterpoints[i], answers[i], 2);
     }
 
-    std::cout << "TIme(s): " << stopw.getElapsedTimeMicro() * 1e-6 / nq << std::endl;
+    std::cout << "Time(s): " << stopw.getElapsedTimeMicro() * 1e-6 / nq << std::endl;
 
     {
         std::string filename = std::string("sift100k_") + std::to_string(nq) + std::string("q_path_cache_margin2.bin");
