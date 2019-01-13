@@ -14,7 +14,7 @@ static void test_approx(float *massQ, size_t nq,
 
     #pragma omp parallel for
     for (int i = 0; i < nq; i++) {
-        enterpoints[i] = quantizer->get_enterpoint(massQ + d*i);
+        enterpoints[i] = 0; //quantizer->get_enterpoint(massQ + d*i);
         results[i] = quantizer->bfs(enterpoints[i], answers[i], 2);
     }
 
