@@ -102,6 +102,7 @@ namespace hnswlib {
 
                     if (limit > 0 && query_dist_calc == limit) {
                         dist_calc += query_dist_calc;
+                        hops += num_hops;
                         visitedlistpool->releaseVisitedList(vl);
                         return topResults;
                     }
@@ -342,10 +343,14 @@ namespace hnswlib {
                         currObj = cand;
                         changed = true;
                     }
+                    if (limit > 0 && query_dist_calc == limit) {
+                        dist_calc += query_dist_calc;
+                        hops += query_hops_num;
+                        return currObj;
+                    }
                 }
             }
         }
-        limit -= query_dist_calc;
         dist_calc += query_dist_calc;
         hops += query_hops_num;
         return currObj;
@@ -354,11 +359,23 @@ namespace hnswlib {
 
     std::priority_queue<std::pair<float, idx_t>> HierarchicalNSW::searchKnn(const float *query, size_t k) {
         idx_t preserved_enterpoint_node = enterpoint_node;
+        size_t prev_dist_calc = dist_calc;
+        size_t prev_limit = limit;
+
         enterpoint_node = get_enterpoint(query);
-        size_t query_dist_calc = dist_calc;
+        // if limit is exceed on higher levels
+        if (prev_limit > 0 && (dist_calc - prev_dist_calc) == limit) {
+            std::priority_queue<std::pair<float, idx_t >> topResults;
+            float dist = fvec_L2sqr(query, getDataByInternalId(enterpoint_node), d_);
+            topResults.emplace(dist, enterpoint_node);
+            enterpoint_node = preserved_enterpoint_node;
+            return topResults;
+        }
+
+        limit -= dist_calc - prev_dist_calc;
         auto topResults = searchBaseLayer(query, efSearch);
         enterpoint_node = preserved_enterpoint_node;
-        limit += query_dist_calc;
+        limit = prev_limit;
 
         while (topResults.size() > k)
             topResults.pop();

@@ -52,7 +52,7 @@ namespace hnswlib {
         VisitedListPool *visitedlistpool;
         int32_t enterpoint_node;
 
-	size_t limit;
+	    size_t limit;
         size_t dist_calc;
         size_t hops;
 
