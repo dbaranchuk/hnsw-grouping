@@ -35,10 +35,10 @@ efSearch="300"         # Max number of candidate vertices in priority queue to o
 
 path_data="${PWD}/data/SIFT1M"
 path_model="${PWD}/models/SIFT1M"
-path_base="${path_data}/sift_base.fvecs"
+path_base="${path_data}/sift_base_norm.fvecs"
 path_learn="${path_data}/sift_learn.fvecs"
 path_gt="${path_data}/test_gt.ivecs" #sift_groundtruth.ivecs"
-path_q="${path_data}/sift_query.fvecs"
+path_q="${path_data}/sift_query_norm.fvecs"
 
 path_edges="${path_model}/test_hnsw_M${M}_ef${efConstruction}_onelevel${onelayer}.ivecs" 
 path_info="${path_model}/test_hnsw_M${M}_ef${efConstruction}_onelevel${onelayer}.bin"
