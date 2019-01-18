@@ -100,13 +100,6 @@ namespace hnswlib {
                 if (massVisited[tnum] != currentV) {
                     massVisited[tnum] = currentV;
 
-                    if (limit > 0 && query_dist_calc == limit) {
-                        dist_calc += query_dist_calc;
-                        hops += num_hops;
-                        visitedlistpool->releaseVisitedList(vl);
-                        return topResults;
-                    }
-
                     float dist = fvec_L2sqr(point, getDataByInternalId(tnum), d_);
                     query_dist_calc++;
 
@@ -120,6 +113,12 @@ namespace hnswlib {
                             topResults.pop();
 
                         lowerBound = topResults.top().first;
+                    }
+                    if (limit > 0 && query_dist_calc == limit) {
+                        dist_calc += query_dist_calc;
+                        hops += num_hops;
+                        visitedlistpool->releaseVisitedList(vl);
+                        return topResults;
                     }
                 }
             }
