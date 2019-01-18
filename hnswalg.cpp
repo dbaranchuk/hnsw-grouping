@@ -318,8 +318,8 @@ namespace hnswlib {
         assert(enterpoint_node >= 0);
         idx_t currObj = enterpoint_node;
         float curdist = fvec_L2sqr(query, getDataByInternalId(currObj), d_);
-        size_t query_dist_calc = 0;
-        size_t query_hops_num = 0;
+        size_t query_dist_calc = 1;
+        size_t query_hops_num = 1;
         query_dist_calc += (int) (max_level > 0);
 
         for (size_t level = max_level; level > 0; level--) {
