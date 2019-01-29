@@ -17,10 +17,10 @@ onelayer="1"
 nb="100000"          # Number of base vectors
 nt="100000"           # Number of learn vectors
 
-nq="89983"            # Number of queries
+nq="100000"            # Number of queries
 ngt="1"             # Number of groundtruth neighbours per query
 
-d="128"               # Vector dimension
+d="96"               # Vector dimension
 
 #####################
 # Search parameters #
@@ -33,15 +33,15 @@ efSearch="300"         # Max number of candidate vertices in priority queue to o
 # Paths #
 #########
 
-path_data="${PWD}/data/SIFT100K"
-path_model="${PWD}/models/SIFT100K"
-path_base="${path_data}/sift_base.fvecs"
-path_learn="${path_data}/sift_learn.fvecs"
+path_data="${PWD}/data/DEEP100K"
+path_model="${PWD}/models/DEEP100K"
+path_base="${path_data}/deep_base.fvecs"
+path_learn="${path_data}/deep_learn.fvecs"
 path_gt="${path_data}/train_gt.ivecs" #sift_groundtruth.ivecs"
-path_q="${path_data}/sift_learn_filtered.fvecs"
+path_q="${path_data}/deep_learn.fvecs"
 
-path_edges="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}_onelevel${onelayer}.ivecs"
-path_info="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}_onelevel${onelayer}.bin"
+path_edges="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}_onelevel${onelayer}.ivecs" #levels
+path_info="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}_onelevel${onelayer}.bin" #levels
 
 #######
 # Run #
@@ -61,5 +61,5 @@ path_info="${path_model}/test_hnsw100k_M${M}_ef${efConstruction}_onelevel${onela
                      -path_q ${path_q} \
                      -path_edges ${path_edges} \
                      -path_info ${path_info} \
-		     -limit ${limit} \
-		     -onelayer ${onelayer}
+		             -limit ${limit} \
+		             -onelayer ${onelayer}
