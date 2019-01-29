@@ -15,13 +15,13 @@ static void test_approx(float *massQ, size_t nq,
     #pragma omp parallel for
     for (int i = 0; i < nq; i++) {
         enterpoints[i] = quantizer->get_enterpoint(massQ + d*i);
-        results[i] = quantizer->bfs(enterpoints[i], answers[i], 2);
+        results[i] = quantizer->bfs(enterpoints[i], answers[i], 5);
     }
 
     std::cout << "Time(s): " << stopw.getElapsedTimeMicro() * 1e-6 / nq << std::endl;
 
     {
-        std::string filename = std::string("sift100k_") + std::to_string(nq) + std::string("q_path_cache_margin2.bin");
+        std::string filename = std::string("data100k_") + std::to_string(nq) + std::string("q_path_cache_margin5.bin");
         std::ofstream out(filename, std::ios::binary);
 
         for (size_t i = 0; i < nq; i++) {
@@ -34,7 +34,7 @@ static void test_approx(float *massQ, size_t nq,
         }
     }
     {
-        std::string filename = std::string("sift100k_") + std::to_string(nq) + std::string("q_enterpoints.dat");
+        std::string filename = std::string("data100k_") + std::to_string(nq) + std::string("q_enterpoints.dat");
         std::ofstream out(filename, std::ios::binary);
         out.write((char *) &nq, sizeof(uint32_t));
         out.write((char *) enterpoints.data(), nq*sizeof(idx_t));

@@ -7,3 +7,4 @@ cmake-build-debug
 data
 *CMakeFiles
 *cmake-build-debug
+.DS_Store
