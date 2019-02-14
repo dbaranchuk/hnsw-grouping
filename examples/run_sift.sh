@@ -1,6 +1,8 @@
-# Release baseline test
-
 #!/bin/bash
+
+#########################
+# Release baseline test #
+#########################
 
 limit="0"
 

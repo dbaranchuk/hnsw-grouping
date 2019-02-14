@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#########################
+# Release baseline test #
+#########################
+
 limit="0"
 
 ################################
@@ -36,12 +40,12 @@ path_data="${PWD}/data/DEEP1M"
 path_model="${PWD}/models/DEEP1M"
 
 path_base="${path_data}/deep_base.fvecs"
-path_learn="${path_data}/deep_learn.fvecs"
-path_gt="${path_data}/deep_groundtruth.ivecs"
+path_learn="${path_data}/deep_learn_filtered.fvecs"
+path_gt="${path_data}/test_gt.ivecs"
 path_q="${path_data}/deep_query.fvecs"
 
-path_edges="${path_model}/test_hnsw_M${M}_ef${efConstruction}.ivecs"
-path_info="${path_model}/test_hnsw_M${M}_ef${efConstruction}.bin"
+path_edges="${path_model}/test_hnsw_M${M}_ef${efConstruction}_onelevel${onelayer}.ivecs"
+path_info="${path_model}/test_hnsw_M${M}_ef${efConstruction}_onelevel${onelayer}.bin"
 
 #######
 # Run #
