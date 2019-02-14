@@ -1,9 +1,8 @@
-
 #include "utils.h"
 
 namespace hnswlib {
 
-    float _fvec_L2sqr(const float *x, const float *y, size_t d) {
+    float fvec_L2sqr(const float *x, const float *y, size_t d) {
         float PORTABLE_ALIGN32 TmpRes[8];
         #ifdef USE_AVX
         size_t qty16 = d >> 4;
@@ -94,7 +93,7 @@ namespace hnswlib {
         // cannot use AVX2 _mm_mask_set1_epi32
     }
 
-    float fvec_L2sqr(const float *x, const float *y, size_t d)
+    float fvec_neg_dot(const float *x, const float *y, size_t d)
     {
         __m256 msum1 = _mm256_setzero_ps();
 
@@ -123,6 +122,6 @@ namespace hnswlib {
 
         msum2 = _mm_hadd_ps (msum2, msum2);
         msum2 = _mm_hadd_ps (msum2, msum2);
-        return  2*(1-_mm_cvtss_f32 (msum2));
+        return  -_mm_cvtss_f32 (msum2);
     }
 }
