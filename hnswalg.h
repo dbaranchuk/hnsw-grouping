@@ -126,5 +126,8 @@ namespace hnswlib {
 
         // BFS
         std::vector<idx_t> bfs(idx_t initial_vertex_id, idx_t gt, size_t margin=0);
+
+        std::priority_queue<std::pair<float, idx_t>>
+        HierarchicalNSW::searchBaseLayerFast(const float *point, size_t ef);
     };
 }

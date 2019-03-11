@@ -76,8 +76,8 @@ namespace hnswlib {
         size_t num_hops = 0;
         while (!candidateSet.empty()) {
             std::pair<float, idx_t> curr_el_pair = candidateSet.top();
-//            if (-curr_el_pair.first > lowerBound)
-//                break;
+            if (-curr_el_pair.first > lowerBound)
+                break;
 
             candidateSet.pop();
             idx_t curNodeNum = curr_el_pair.second;
@@ -372,7 +372,7 @@ namespace hnswlib {
         }
 
         limit -= dist_calc - prev_dist_calc;
-        auto topResults = searchBaseLayer(query, efSearch);
+        auto topResults = searchBaseLayerFast(query, efSearch);
         enterpoint_node = preserved_enterpoint_node;
         limit = prev_limit;
 
@@ -686,9 +686,73 @@ namespace hnswlib {
             results.push_back(backward_vertices[i].vertex_id);
             results.push_back((idx_t)backward_vertices[i].min_path_length);
         }
-//        std::cout << results.size() << std::endl;
-//        std::cout << forward_counter << " " << backward_counter << std::endl; //" Time: " <<
-//                     stopw.getElapsedTimeMicro() * 1e-6 << std::endl;
         return results;
+    }
+
+    std::priority_queue<std::pair<float, idx_t>>
+    HierarchicalNSW::searchBaseLayerFast(const float *point, size_t ef) {
+        VisitedList *vl = visitedlistpool->getFreeVisitedList();
+        vl_type *massVisited = vl->mass;
+        vl_type currentV = vl->curV;
+        std::priority_queue<std::pair<float, idx_t >> candidateSet;
+        std::priority_queue<std::pair<float, idx_t >> topResults;
+
+        float dist = fvec_L2sqr(point, getDataByInternalId(enterpoint_node), d_);
+        size_t query_dist_calc = 1;
+
+        candidateSet.emplace(-dist, enterpoint_node);
+        massVisited[enterpoint_node] = currentV;
+        float best_dist = dist;
+        idx_t best_candidate = enterpoint_node;
+
+        size_t num_hops = 0;
+        while (!candidateSet.empty()) {
+            std::pair<float, idx_t> curr_el_pair = candidateSet.top();
+            candidateSet.pop();
+            idx_t curNodeNum = curr_el_pair.second;
+
+            uint16_t *ll_cur = get_linklist(curNodeNum);
+
+            size_t size = *ll_cur;
+            auto *data = (idx_t *) (ll_cur + 1);
+
+            _mm_prefetch((char *) (massVisited + *data), _MM_HINT_T0);
+            _mm_prefetch((char *) (massVisited + *data + 64), _MM_HINT_T0);
+            _mm_prefetch(getDataByInternalId(*data), _MM_HINT_T0);
+
+            for (size_t j = 0; j < size; ++j) {
+                idx_t tnum = *(data + j);
+
+                _mm_prefetch((char *) (massVisited + *(data + j + 1)), _MM_HINT_T0);
+                _mm_prefetch(getDataByInternalId(*(data + j + 1)), _MM_HINT_T0);
+
+                if (massVisited[tnum] != currentV) {
+                    massVisited[tnum] = currentV;
+
+                    float dist = fvec_L2sqr(point, getDataByInternalId(tnum), d_);
+                    query_dist_calc++;
+
+                    candidateSet.emplace(-dist, tnum);
+                    if (dist < best_dist){
+                        best_dist = dist;
+                        best_candidate = tnum;
+                    }
+                    if (limit > 0 && query_dist_calc == limit) {
+                        dist_calc += query_dist_calc;
+                        hops += num_hops;
+                        visitedlistpool->releaseVisitedList(vl);
+                        topResults.emplace(best_dist, best_candidate);
+                        return topResults;
+                    }
+                }
+            }
+            num_hops++;
+        }
+        hops += num_hops;
+        dist_calc += query_dist_calc;
+        visitedlistpool->releaseVisitedList(vl);
+
+        topResults.emplace(best_dist, best_candidate);
+        return topResults;
     }
 }
