@@ -19,7 +19,7 @@ onelayer="0"
 ###################
 
 nb="1000000"          # Number of base vectors
-nt="1000000"           # Number of learn vectors
+nt="1000000"          # Number of learn vectors
 nq="10000"            # Number of queries
 ngt="1"               # Number of groundtruth neighbours per query
 

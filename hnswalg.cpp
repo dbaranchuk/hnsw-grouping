@@ -76,8 +76,8 @@ namespace hnswlib {
         size_t num_hops = 0;
         while (!candidateSet.empty()) {
             std::pair<float, idx_t> curr_el_pair = candidateSet.top();
-            if (-curr_el_pair.first > lowerBound)
-                break;
+//            if (-curr_el_pair.first > lowerBound)
+//                break;
 
             candidateSet.pop();
             idx_t curNodeNum = curr_el_pair.second;
