@@ -15,9 +15,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eea23355-286c-4603-b8c0-8146464b8097" name="Default Changelist" comment="update">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hnswalg.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/hnswalg.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hnswalg.h" beforeDir="false" afterPath="$PROJECT_DIR$/hnswalg.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -41,22 +40,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="140" />
-          <entry key="h" value="3" />
+          <entry key="cpp" value="145" />
+          <entry key="gitignore" value="15" />
+          <entry key="h" value="4" />
           <entry key="sh" value="133" />
-          <entry key="txt" value="16" />
+          <entry key="txt" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="143" />
-          <entry key="PLAIN_TEXT" value="149" />
+          <entry key="ObjectiveC" value="149" />
+          <entry key="PLAIN_TEXT" value="176" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cpp" value="3" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
           <entry key="h" value="3" />
           <entry key="sh" value="1" />
           <entry key="txt" value="1" />
@@ -66,7 +66,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="1" />
           <entry key="ObjectiveC" value="6" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -85,15 +85,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hnswalg.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="687" column="9" selection-start-line="687" selection-start-column="9" selection-end-line="687" selection-end-column="9" />
+            <state relative-caret-position="118">
+              <caret line="690" selection-start-line="690" selection-end-line="690" />
               <folding>
-                <marker date="1552340940425" expanded="true" signature="2857:2901" ph="..." />
-                <marker date="1552340940425" expanded="true" signature="25851:25982" ph="..." />
+                <marker date="1552340993325" expanded="true" signature="2857:2901" ph="..." />
+                <marker date="1552340993325" expanded="true" signature="25855:25986" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -101,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hnswalg.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="130" column="76" selection-start-line="130" selection-start-column="76" selection-end-line="130" selection-end-column="76" />
+            <state relative-caret-position="412">
+              <caret line="118" column="52" lean-forward="true" selection-start-line="118" selection-start-column="52" selection-end-line="118" selection-end-column="52" />
               <folding>
                 <element signature="e#14#44#0" expanded="true" />
               </folding>
@@ -114,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/tests/test_nsg.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="402">
-              <caret line="96" column="17" lean-forward="true" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+              <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -149,18 +158,6 @@
             <state>
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/visited_list_pool.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-              <folding>
-                <element signature="e#13#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -233,13 +230,13 @@
         <option value="$PROJECT_DIR$/tests/test_hnsw.cpp" />
         <option value="$PROJECT_DIR$/examples/run_sift_100k.sh" />
         <option value="$PROJECT_DIR$/examples/run_glove_100k.sh" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/tests/test_bfs.cpp" />
         <option value="$PROJECT_DIR$/utils.cpp" />
         <option value="$PROJECT_DIR$/examples/run_deep.sh" />
         <option value="$PROJECT_DIR$/examples/run_sift.sh" />
-        <option value="$PROJECT_DIR$/hnswalg.h" />
         <option value="$PROJECT_DIR$/hnswalg.cpp" />
+        <option value="$PROJECT_DIR$/hnswalg.h" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -358,7 +355,7 @@
       <workItem from="1546001864001" duration="235000" />
       <workItem from="1546471674421" duration="70828000" />
       <workItem from="1548862702106" duration="7064000" />
-      <workItem from="1551215751659" duration="4430000" />
+      <workItem from="1551215751659" duration="4576000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1548776591356</created>
@@ -395,19 +392,19 @@
       <option name="project" value="LOCAL" />
       <updated>1552340457158</updated>
     </task>
-    <task id="LOCAL-00006" summary="update">
-      <created>1546801852185</created>
+    <task id="LOCAL-00006" summary="fast_search">
+      <created>1552340993726</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1546801852185</updated>
+      <updated>1552340993726</updated>
     </task>
     <task id="LOCAL-00007" summary="update">
-      <created>1546803008532</created>
+      <created>1552341031739</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1546803008533</updated>
+      <updated>1552341031739</updated>
     </task>
     <task id="LOCAL-00008" summary="update">
       <created>1546806988048</created>
@@ -619,11 +616,11 @@
       <option name="project" value="LOCAL" />
       <updated>1547826981260</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11904000" />
+    <option name="totallyTimeSpent" value="12050000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -661,6 +658,7 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="add inner product" />
     <MESSAGE value="infinite search" />
+    <MESSAGE value="fast_search" />
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
@@ -679,13 +677,6 @@
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -758,7 +749,7 @@
     <entry file="file://$PROJECT_DIR$/tests/test_nsg.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
-          <caret line="96" column="17" lean-forward="true" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+          <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -772,24 +763,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hnswalg.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="690" selection-start-line="690" selection-end-line="690" />
+          <folding>
+            <marker date="1552340993325" expanded="true" signature="2857:2901" ph="..." />
+            <marker date="1552340993325" expanded="true" signature="25855:25986" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hnswalg.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="130" column="76" selection-start-line="130" selection-start-column="76" selection-end-line="130" selection-end-column="76" />
+        <state relative-caret-position="412">
+          <caret line="118" column="52" lean-forward="true" selection-start-line="118" selection-start-column="52" selection-end-line="118" selection-end-column="52" />
           <folding>
             <element signature="e#14#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hnswalg.cpp">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="687" column="9" selection-start-line="687" selection-start-column="9" selection-end-line="687" selection-end-column="9" />
-          <folding>
-            <marker date="1552340940425" expanded="true" signature="2857:2901" ph="..." />
-            <marker date="1552340940425" expanded="true" signature="25851:25982" ph="..." />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
         </state>
       </provider>
     </entry>
