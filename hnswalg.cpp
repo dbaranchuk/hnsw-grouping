@@ -372,7 +372,7 @@ namespace hnswlib {
         }
 
         limit -= dist_calc - prev_dist_calc;
-        auto topResults = searchBaseLayerFast(query, efSearch);
+        auto topResults = searchBaseLayer(query, efSearch);
         enterpoint_node = preserved_enterpoint_node;
         limit = prev_limit;
 
